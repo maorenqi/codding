@@ -1,0 +1,792 @@
+body{
+  width: 7.5rem;margin: 0 auto;position: relative;
+}
+header{
+  padding: 0.2rem 0.2rem;
+  .navigation-left{
+    float: left;padding-top: 0.13rem;
+    &.rotate{
+      span{
+        transform-origin: 0 0;
+      }
+      span:first-of-type{
+        transform: translateX(0.05rem) translateY(-0.04rem) rotate(45deg)
+      }
+      span:last-of-type{
+        transform: translateX(0) rotate(-45deg);
+      }
+    }
+    span{
+      display: block;width: 0.53rem;height: 2px;background: #cccccc;transition: all 0.5s;
+      &:first-of-type{
+        margin-bottom: 0.3rem;
+      }
+    }
+  }
+  .navigation-mid{
+    img{
+      display: block;width: 2.84rem;margin: 0 auto;
+    }
+  }
+}
+.banner{
+  img{
+    display: block;width: 100%;
+  }
+}
+.article-click{
+  display: flex;justify-content: space-between;margin-top: 0.44rem;padding: 0 0.2rem;-webkit-justify-content: space-between;
+  display: -webkit-flex;
+  .article-item{
+    padding: 0.08rem;transition: 0.5s;-webkit-transition: 0.5s;
+    &.item2{
+      background: #6686ff;
+    }
+    &.item1{
+      background: #43b9f6;
+    }
+    &.item3{
+      background: #9878ff;
+    }
+    &.hover{
+      transform: scale(1.1);
+    }
+    .article-img{
+     margin: 0 auto 0.07rem;
+      img{
+        display: block;width: 100%;height: 0.75rem;
+      }
+    }
+    .article-detail{
+      text-align: center;border: 1px solid #fff;
+      .article-title{
+        font-size: 0.2812rem;color: #fff;
+      }
+      .article-text{
+        font-size: 0.2343rem;color: #fff;margin-bottom: 0;margin-top: 0.20rem;
+      }
+      .underline{
+        width: 0.40rem;margin: 0 auto;height: 2px;background: #fff;display: block;
+      }
+    }
+  }
+}
+
+.side-menu{
+  background: #ebebeb;position: fixed;top: 0;left: 0;bottom: 0;width: 5.22rem;
+  transition: all 0.3s linear;-webkit-transition: all 0.3s linear;overflow-y: scroll;
+  &.side-hide{
+    opacity: 0;transform: translateX(-5.22rem);-webkit-transform: translateX(-5.22rem);
+  }
+  &.side-show{
+    /*transform: translateX(0);-webkit-transform: translateX(0);*/opacity: 1;
+  }
+  .channel-list{
+    .channel-item{
+      margin-bottom: 1px;
+      &.show{
+        .channel-item-title{
+          background: #333;color: #fff;
+          b{
+            background: #fff;
+          }
+        }
+      }
+      .channel-item-title{
+        b{
+          padding: 0.16rem;border-radius: 50%;border: 1px solid #ccc;display: inline-block;margin-right: 0.18rem;
+        }
+        font-size: 0.3749rem;padding: 0.3rem 0.4rem;background: #fff;
+      }
+      .sub-channel-box{
+        background: #ebebeb;display: none;
+        //display: none;
+        .sub-channel-item{
+          padding: 0.2rem 0.4rem;
+          a{
+            font-size: 16px;color: #333;
+          }
+        }
+      }
+    }
+  }
+}
+.index-title{
+  text-align: center;margin: 1.10rem 0 0.20rem;font-size: 0.4218rem;
+}
+.ks-navigator-content{
+  padding: 0 0.2rem;
+}
+.ks-navigator{
+  padding: 0 0.4rem;overflow: hidden;
+  .ks-navigator-item{
+    float: left;width: 3rem;
+    &:nth-of-type(1){
+      margin-right: 0.3rem;margin-bottom: 0.30rem;
+    }
+    &:nth-of-type(3){
+      margin-right: 0.3rem;margin-bottom: 0.30rem;
+    }
+    img{
+      display: block;width: 100%;height: 1.8rem;
+    }
+    .ks-navigator-item-detail{
+      padding: 0.16rem 0.1rem;
+      .ks-navigator-item-title{
+        font-size: 14px;
+      }
+      svg{
+        float: right;margin-top: 0.04rem;
+      }
+    }
+  }
+}
+.ks-navigator-more{
+  width: 3.45rem;height: 0.8rem;margin: 0.28rem auto 0;background-color: #449ce7;text-align: center;line-height: 0.8rem;
+  a{
+    color: #fff;font-size: 0.3281rem;
+  }
+}
+.doctor-team{
+  background: #449ce7;padding: 0 0.2rem;
+  .doctor-img{
+    width: 2.4rem;float: left;margin-right: 0.1rem;
+    img{
+      display: block;width: 100%;height: 2.6rem;
+    }
+  }
+  .doctor-detail{
+    padding: 0.28rem 0 0;
+    .doctor-name{
+      font-size: 0.3281rem;color: #fff;
+      strong{
+        font-size: 0.3749rem;margin-right: 0.07rem;
+      }
+    }
+    .doctor-zc{
+      font-size: 0.12rem;overflow: hidden;
+      ul{
+        margin: 0;padding: 0;list-style: none;
+        li{
+          float: left;padding: 0.03rem;background: #fff;font-size: 0.10rem;margin-right: 0.06rem;border-radius: 2px;
+          margin-top: 0.02rem;margin-bottom: 0.02rem;
+        }
+      }
+    }
+    .doctor-info{
+      font-size: 0.2343rem;-webkit-line-clamp: 2;text-overflow: ellipsis;display: -webkit-box;
+      -webkit-box-orient: vertical;overflow: hidden;margin-top: 0.15rem;color: #fff;
+    }
+    .doctor-zx{
+      margin-top: 0.18rem;
+      a{
+        padding: 0.05rem 0.2rem;background: #ff7e46;color: #fff;font-size: 0.2812rem;border-radius: 4px;
+      }
+    }
+  }
+  .swiper-pagination-fraction{
+    width: auto;right: 0; left: auto;bottom: 0;color: #89b7e6;font-size: 0.60rem;
+  }
+}
+.news-timeline{
+  position: relative;padding: 0 0.2rem;
+  .news-line{
+    position: absolute;top: 0;left: 50%;bottom: 0;width: 2px;background: #e9e9eb;margin-left: -1px;
+  }
+  .news-list{
+    overflow: hidden;margin-bottom: 0.43rem;
+    &.news-list-bg{
+      padding: 0.08rem 0.2rem;background: #ff7e46;position: relative;margin: 0 -0.2rem;
+      .news{
+        .news-title{
+          color: #fff;
+        }
+        .news-article{
+          color: #fff;
+        }
+      }
+    }
+    &.reverse{
+      .news{
+        float: right;padding-left: 0.13rem;padding-right: 0;
+      }
+      .news-time{
+        float: right;padding-left: 0;padding-right: 0.20rem;
+        .icon{
+          left: auto;right: -0.21rem;
+        }
+      }
+    }
+    .news-time{
+      position: relative;padding-left: 0.20rem;float: left;
+      .icon{
+        position: absolute;left: -0.06rem;top: 0.10rem;font-size: 0.3749rem;
+      }
+      .month-day{
+        font-size: 0.4687rem;color: #a0a0a0;
+      }
+      .year{
+        font-size: 0.4218rem;color: #a0a0a0;
+      }
+    }
+    .news{
+      float: left;width: 3.5rem;padding-right: 0.13rem;
+      .news-article{
+        -webkit-line-clamp: 4;text-overflow: ellipsis;display: -webkit-box;-webkit-box-orient: vertical;overflow: hidden;
+        font-size: 0.2812rem;
+      }
+      .news-title{
+        font-size: 0.3281rem;font-weight: bold;
+      }
+    }
+    .news-img{
+      float: left;width: 3.0rem;margin-left: 0.20rem;
+      img{
+        display: block;height: 1.26rem;
+      }
+    }
+  }
+  .news-more{
+    width: 3.45rem;height: 0.8rem;margin: 0.57rem auto 0;background-color: #449ce7;text-align: center;line-height: 0.8rem;
+    position: relative;
+    a{
+      color: #fff;font-size: 0.3281rem;
+    }
+  }
+}
+.hospital-detail{
+  padding: 0.2rem;font-size: 0.3281rem;
+}
+.hospital-detail-more{
+  width: 3.45rem;height: 0.8rem;margin: 0.28rem auto 0;background-color: #449ce7;text-align: center;line-height: 0.8rem;
+  a{
+    color: #fff;font-size: 0.3281rem;
+  }
+}
+.adv-img{
+  img{
+    display: block;width: 100%;
+  }
+}
+.honor-list{
+  img{
+    display: block;width: 100%;
+  }
+}
+footer{
+  padding: 0.2rem;
+  .footer-content{
+    font-size: 0.3281rem;
+    .social-contact{
+      font-size: 0.4687rem;margin-top: 0.30rem;
+    }
+    .copyright{
+      text-align: center;margin-top: 0.30rem;
+    }
+  }
+}
+
+//下拉菜单
+.down-menu{
+  position: absolute;left: 0;width: 100%;z-index: 999;
+  &.fixed{
+    position: fixed;top: 0;width: 100%;left: 0;
+  }
+  .current-menu{
+    padding: 0.30rem 0.20rem;background: #333333;
+    a{
+      font-size: 0.3749rem;color: #fff;
+    }
+    .icon{
+      color: #fff;font-size: 0.4687rem;float: right;transition: 0.5s;-webkit-transition: 0.5s;
+    }
+  }
+  .toggle-menu{
+    display: none;
+    ul{
+      margin: 0;padding: 0;list-style: none;
+      li{
+        padding: 0.20rem;border-bottom: 1px solid #bab6b7;background: #ebebeb;opacity: 0.7;
+        a{
+          color: #333;font-size: 0.3749rem;
+        }
+      }
+    }
+  }
+  &.active{
+    .icon{
+      transform: rotate(180deg);
+    }
+  }
+}
+.img-show{
+  margin: 0 0.20rem;
+  img{
+    display: block;width: 100%;
+  }
+}
+.img-show-content{
+  padding: 0.20rem;text-align: justify;font-size: 0.3281rem;
+}
+
+//文章列表、详情
+.article-title{
+  text-align: center;margin-top: 0.50rem;
+  .article-main-title{
+    font-size: 0.4218rem;
+  }
+  .article-time{
+    font-size: 0.2812rem;color: #666666;
+  }
+}
+.article-para{
+  font-size: 0.3749rem;padding: 0.34rem 0.20rem;
+}
+.article-list{
+  margin-top: 0.32rem;
+  .article-item{
+    display: flex;display: -webkit-flex;justify-content: center;-webkit-justify-content: center;margin-bottom: 0.6rem;
+    .article-item-content{
+      width: 4.1rem;
+      .article-item-time{
+        overflow: hidden;
+        .article-item-time-date{
+          font-size: 0.3281rem;float: left;margin-right: 0.14rem;margin-top: 0.05rem;
+        }
+        .article-item-time-year{
+          float: left;font-size: 0.4218rem;color: #a0a0a0;
+        }
+      }
+      .article-item-title{
+        font-size: 0.3749rem;font-weight: bold;
+      }
+      p{
+        font-size: 0.2812rem;-webkit-line-clamp: 2;text-overflow: ellipsis; display: -webkit-box;-webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    }
+    .article-item-img{
+      width: 3rem;
+      img{
+        display: block;width: 100%;height: 1.4rem;
+      }
+    }
+
+  }
+}
+.article-page{
+  text-align: center;font-size: 0.3281rem;
+}
+
+//公益事业
+.public-welfare{
+  padding: 0 0.2rem;margin-top: 0.32rem;
+  .public-welfare-title{
+    font-size: 0.3749rem;color: #007ac1;margin-bottom: 0.14rem;
+  }
+  .public-welfare-content{
+    font-size: 0.3281rem;margin-bottom: 0.28rem;overflow: hidden;
+    img{
+      display: block;width: 100%;
+    }
+    .icon{
+      color: #007ac1;
+    }
+    ul{
+      list-style: none;margin: 0;padding: 0;
+      li{
+        float: left;width: 1.97rem;margin-right: 0.48rem;
+        &:nth-of-type(3n){
+          margin-right: 0;
+        }
+        img{
+          height: 0.6rem;
+        }
+      }
+    }
+    .public-welfare-content-text{
+      margin-bottom: 0.16rem;
+    }
+  }
+}
+
+//关于我们
+.about-us{
+  padding: 0 0.20rem;
+  .about-us-img{
+    img{
+      display: block;width: 100%;
+    }
+  }
+  .about-us-title{
+    text-align: center;margin-top: 0.26rem;margin-bottom: 0.45rem;
+    .about-us-cn-title{
+      font-size: 0.4218rem;
+    }
+    .about-us-en-title{
+      font-size: 0.2343rem;
+    }
+  }
+  .about-us-content{
+    .about-us-show-text{
+      font-size: 0.3281rem;margin-bottom: 0.18rem;
+    }
+    .about-us-show-img{
+      overflow: hidden;
+      .about-us-show-img-item{
+        width: 2.29rem;float: left;margin-right: 0.10rem;
+        &:nth-of-type(3){
+          margin-right: 0;
+        }
+        img{
+          display: block;width: 100%;height: 1.60rem;
+        }
+      }
+    }
+    .about-us-content-title{
+      font-size: 0.3749rem;margin-bottom: 0.18rem;
+    }
+    p{
+      margin-bottom: 0.56rem;font-size: 0.3281rem;
+    }
+  }
+}
+
+//荣誉资质
+.honor{
+  padding: 0 0.2rem;
+  .honor-detail{
+    font-size: 0.3749rem;
+    span{
+      font-size: 0.4218rem;color: #ff7e46;
+    }
+  }
+  .honor-show{
+    margin: 0.48rem 0.63rem 0;overflow: hidden;
+    .honor-show-img{
+      float: left;width: 2.67rem;margin-right: 0.5rem;margin-bottom: 0.20rem;
+      &:nth-of-type(2n){
+        margin-right: 0;
+      }
+      img{
+        display: block;width: 100%;height: 1.76rem;
+      }
+      p{
+        text-align: center;font-size: 0.3281rem;padding: 0.07rem;margin-bottom: 0;
+      }
+    }
+  }
+}
+
+//五心服务
+.services{
+  padding: 0 0.2rem;
+  .services-img{
+    margin: 0 0.90rem 0.39rem;
+    img{
+      display: block;width: 100%;
+    }
+  }
+  .services-content{
+    .services-content-title{
+      font-size: 0.3749rem;color: #007ac1;margin-bottom: 0.3rem;
+    }
+    .services-content-text{
+      margin-bottom: 0.5rem;font-size: 0.3281rem;
+    }
+    p{
+      font-size: 0.3281rem;
+      span{
+        color: #007ac1;
+      }
+    }
+  }
+}
+
+//设备列表
+.equipment-list{
+  padding: 0 0.4rem;overflow: hidden;
+  .equipment-item{
+    float: left;width: 3rem;margin-bottom: 0.30rem;
+    &:nth-of-type(2n-1){
+      margin-right: 0.3rem;
+    }
+    img{
+      display: block;width: 100%;height: 1.8rem;
+    }
+    .equipment-item-detail{
+      .equipment-item-detail-title{
+        font-size: 0.3281rem;
+      }
+      svg{
+        float: right;margin-top: 0.04rem;
+      }
+    }
+
+  }
+}
+
+//门诊排班
+.schedule{
+  padding: 0 0.2rem;
+  .schedule-tip{
+    .schedule-tip-title{
+      color: #007ac1;font-size: 0.3749rem;
+    }
+    p{
+      font-size: 0.3281rem;
+    }
+  }
+  .schedule-title{
+    font-size: 0.4218rem;text-align: center;padding: 0.3rem 0 0.2rem;color: #007ac1;
+    &.next-week-title{
+      color: #ff7e46;
+    }
+  }
+  .schedule-time{
+    margin-bottom: 0.1rem;
+  }
+  table{
+    margin-bottom: 0.55rem;
+    &.cur-week{
+      border-left: 1px solid #007ac1;
+      th, td{
+        font-size: 0.2343rem;text-align: center;
+      }
+      td{
+        border-bottom: 1px solid #007ac1;border-right: 1px solid #007ac1;
+        a{
+          color: #333333;
+        }
+      }
+      th{
+        border-right: 1px solid #00b0de;background: #007ac1;color: #fff;
+      }
+    }
+    &.next-week{
+      border-left: 1px solid #ff7e46;
+      th, td{
+        font-size: 0.2343rem;text-align: center;
+      }
+      td{
+        border-bottom: 1px solid #ff7e46;border-right: 1px solid #ff7e46;
+        a{
+          color: #333333;
+        }
+      }
+      th{
+        border-right: 1px solid #ffb386;background: #ff7e46;color: #fff;
+      }
+    }
+  }
+}
+//预约挂号
+.fastOrder{
+  padding: 0 0.2rem;
+  label, input{
+    font-size: 0.3281rem;
+  }
+  label{
+    text-align: right;
+  }
+  .radio{
+    display: inline;vertical-align: middle; width: auto;
+  }
+  .form-group{
+    margin-left: 0;margin-right: 0;
+  }
+  .yzm{
+    display: block;width: 100%;
+  }
+  .fastOrder-btn{
+    text-align: center;
+    button[type='submit']{
+      background: #ff7e46;color: #fff;font-size: 0.3749rem;padding: 0.08rem 0.30rem;
+    }
+    button[type='reset']{
+      background: #a0a0a0;color: #fff;font-size: 0.3749rem;padding: 0.08rem 0.30rem;
+    }
+  }
+}
+
+//来院路线
+.map{
+  padding: 0 0.2rem;
+  .map-navigator{
+    margin-bottom: 0.45rem;
+    img{
+      display: block;width: 100%;
+    }
+  }
+  .map-router{
+    padding: 0 0.7rem;
+    .hospital-contact{
+      font-size: 0.3281rem;margin-bottom: 0.3rem;
+    }
+    .map-router-way{
+      .map-router-way-item{
+        margin-bottom: 0.37rem;
+        .map-router-title{
+          font-size: 0.3749rem;color: #007ac1;
+          .icon{
+            font-size: 0.5156rem;
+          }
+        }
+        .map-router-text{
+          font-size: 0.3281rem;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .form-horizontal .control-label{
+    padding-top: 0;
+  }
+}
+
+//就医流程
+.procedure{
+  padding: 0 0.2rem;
+  img{
+    display: block;width: 100%;
+  }
+}
+
+//楼层分布
+.floor{
+  position: relative;
+  .floor-line-bg{
+    width: 0.01rem;background: #007ac1;position: absolute;left: 50%;top: 0;bottom: 0;margin-left: -0.005rem;
+  }
+  .floor-distribution{
+    font-size: 0.3281rem;display: flex;display: -webkit-flex;justify-content: center;-webkit-justify-content: center;
+    margin-bottom: 0.7rem;
+    &:nth-of-type(2n-1){
+      text-align: right;
+      .floor-num{
+        margin-right: 2.78rem;
+      }
+    }
+    &:nth-of-type(2n){
+      .floor-num{
+        margin-left: 3.09rem;
+      }
+    }
+    span{
+      color: #ff7e46;
+    }
+    .icon{
+      font-size: 0.8624rem;margin-top: -0.19rem;color: #007ac1;
+    }
+    .floor-text{
+      font-size: 0.3281rem;flex: 1;
+    }
+  }
+}
+
+//医保定点
+.medical{
+  padding: 0 0.2rem;
+  .medical-content{
+    margin-bottom: 0.30rem;
+    .medical-content-title{
+      font-size: 0.3749rem;color: #ff7e46;margin-bottom: 0.30rem;
+    }
+    .medical-content-detail{
+      ul{
+        margin: 0;padding: 0;list-style: none;
+        li{
+          font-size: 0.3281rem;
+          .icon{
+            color: #007ac1;
+          }
+        }
+      }
+      .medical-content-text{
+        font-size: 0.3281rem;margin-bottom: 0.30rem;
+      }
+    }
+  }
+}
+
+//医院环境
+.environment{
+  .environment-img{
+    img{
+      display: block;width: 100%;
+    }
+  }
+}
+
+//医生列表
+.doctor-list{
+  .doctor-item{
+    overflow: hidden;margin-bottom: 0.25rem;
+    .doctor-show{
+      float: left;width: 2.59rem;margin-right: 0.1rem;
+      img{
+        display: block;width: 100%;height: 3.0rem;
+      }
+    }
+    .doctor-item-detail{
+      overflow: hidden;
+      .doctor-item-name{
+        font-size: 0.3749rem;color: #a0a0a0;margin-bottom: 0.1rem;
+        span{
+          font-size: 0.4218rem;margin-right: 0.08rem;color: #333;
+        }
+      }
+      .doctor-zw{
+        overflow: hidden;
+        .doctor-zw-item{
+          font-size: 0.2812rem;padding: 0.05rem 0.1rem;color: #fff;background: #007ac1;border-radius: 0.08rem;
+          margin-right: 0.1rem;margin-bottom: 0.1rem;display: inline-block;
+        }
+      }
+      .doctor-text{
+        font-size: 0.2812rem;
+      }
+      .doctor-zx{
+        margin-top: 0.5rem;
+        a{
+          padding: 0.12rem 0.36rem;color: #fff;font-size: 0.3281rem;
+          &:nth-of-type(1){
+            background: #ff7e46;
+          }
+          &:nth-of-type(2){
+            background: #007ac1;
+          }
+        }
+      }
+    }
+  }
+}
+
+//医生详情页
+.current-doctor{
+  padding: 0 0.2rem;
+  .doctor-lg-img{
+    width: 4rem;margin: 0 auto 0.23rem;
+    img{
+      display: block;width: 100%;height: 4.46rem;
+    }
+  }
+  .doctor-item-name{
+    font-size: 0.3749rem;color: #a0a0a0;margin-bottom: 0.1rem;
+    span{
+      font-size: 0.4218rem;margin-right: 0.08rem;color: #333;
+    }
+  }
+  .doctor-zw{
+    overflow: hidden;
+    .doctor-zw-item{
+      font-size: 0.2812rem;padding: 0.05rem 0.1rem;color: #fff;background: #007ac1;border-radius: 0.08rem;
+      margin-right: 0.1rem;margin-bottom: 0.1rem;display: inline-block;
+    }
+  }
+  .current-doctor-detail{
+    font-size: 0.3281rem;
+  }
+}

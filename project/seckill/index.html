@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>近视手术0元秒杀</title>
+    <link href="http://abc.prykweb.com/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://abc.prykweb.com/css/public/swiper.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://abc.prykweb.com/css/public/formValidation.min.css"/>
+    <link rel="stylesheet" href="css/miaosha.css">
+    <script src="http://abc.prykweb.com/js/public/jquery-1.10.2.min.js"></script>
+    <script src="http://abc.prykweb.com/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+    <script src="http://abc.prykweb.com/js/public/swiper-3.3.1.min.js"></script>
+    <script src="http://abc.prykweb.com/js/public/formValidation.min.js"></script>
+    <script src="http://abc.prykweb.com/js/public/bootstrap-framework.js"></script>
+    <script src="js/fonts.js"></script>
+    <style type="text/css">
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<div class="banner">
+    <div class="swiper-container banner-slide">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images/miaosha/banner-1.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="images/miaosha/banner-2.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="images/miaosha/banner-3.jpg" alt="">
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+<div class="seckill-container">
+    <div class="seckill-info">
+        <!-- <div class="seckill-detail">
+             <div class="seckill-price">￥ <strong>0</strong>元</div>
+             <div class="seckill-pre-price">
+                 <div class="naoling">
+                     <div class="naoling-bg">
+                         <svg class="icon" aria-hidden="true">
+                             <use xlink:href="#icon-naoling"></use>
+                         </svg>
+                     </div>
+                     <div class="naoling-text">限时秒杀：</div>
+                 </div>
+                 <s>￥2000.00</s>
+             </div>
+             <p>秒杀前，请提前写好名字+电话号码 </p>
+         </div>-->
+        <div class="seckill-img"><img src="images/miaosha/img-1.jpg" alt=""></div>
+        <div class="seckill-time-wrapper">
+            <div class="seckill-time">
+                <p>距秒杀时间还剩:</p>
+                <div class="seckill-lefttime">
+                    <div id="t_h"></div>
+                    ：
+                    <div id="t_m"></div>
+                    ：
+                    <div id="t_s"></div>
+                </div>
+                <!--<button>开始秒杀</button>-->
+            </div>
+        </div>
+    </div>
+    <div class="seckill-order-wrapper">
+        <form id="seckill-order-form">
+            <div class="seckill-order">
+                <div class="form-group input-text">
+                    <label for="">姓名</label>
+                    <input id="username" class="input-text" type="text" name="username" data-fv-trigger="blur" required>
+                </div>
+                <div class="form-group input-text">
+                    <label for="">手机号</label>
+                    <input id="phone" type="text" name="phone" data-fv-trigger="blur" required>
+                </div>
+                <button type="submit" class="submit-btn" disabled="disabled">开始秒杀</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="seckill-tab">
+        <div class="seckill-tab-item active">商品详情</div>
+        <!--<div class="divide">|</div>-->
+        <div class="seckill-tab-item">秒杀规则</div>
+    </div>
+    <div class="swiper-container seckill-tab-slide">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images/miaosha/text-1.jpg" alt="">
+                <div class="tips">
+                    <p>备注：</p>
+                    <p>1.近视手术代金券仅限飞秒类手术和ICL手术使用，可转赠给他人！所有秒杀产品需凭手机短信到院领取或者享受，有效期为1个月，不邮寄。</p>
+                    <p class="text-color">2.活动咨询电话：0791－86259791，咨询微信：pryk0791</p>
+                </div>
+                <div class="ewm">
+                    <img src="images/miaosha/ewm.jpg" alt="">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="seckill-rule">
+                    <div class="seckill-rule-title">秒杀活动规则：</div>
+                    <p>1.凡参与本次活动者，均视为接受本活动规则。</p>
+                    <p>2.秒杀时间为11月10日00：00－11月11日24：00，商品库存有限，抢完即止。</p>
+                    <p>3.每手机号仅限秒杀一件，如出现重复秒杀，我方有权直接取消订单。</p>
+                    <p>4.本次活动解释权归南昌普瑞眼科医院所有。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="popup">
+    <div class="popup-item success">
+        <img src="images/miaosha/success.png" alt="">
+        <div class="popup-close"></div>
+    </div>
+    <div class="popup-item failed">
+        <img src="images/miaosha/failed.png" alt="">
+        <div class="popup-close"></div>
+    </div>
+    <div class="popup-item failed">
+        <img src="images/miaosha/failed-2.png" alt="">
+        <div class="popup-close"></div>
+    </div>
+    <div class="popup-item failed">
+        <img src="images/miaosha/failed-3.png" alt="">
+        <div class="popup-close"></div>
+    </div>
+
+</div>
+<p id="time"></p>
+<!--<div class="time">
+    <span id="t_d">00天</span>
+    <span id="t_h">00时</span>
+    <span id="t_m">00分</span>
+    <span id="t_s">00秒</span>
+</div>-->
+<script runat="server">
+  var bannerSldide = new Swiper('.banner-slide', {
+    paginationType: 'fraction',
+    pagination: '.swiper-pagination',
+    autoplay: 1500
+  })
+
+  var seckillTabItem = $('.seckill-tab').find('.seckill-tab-item')
+  var seckillSlide = new Swiper('.seckill-tab-slide', {
+    onSlideChangeEnd: function () {
+      var i = seckillSlide.activeIndex
+      seckillTabItem.removeClass('active').eq(i).addClass('active')
+      // console.log(i)
+    }
+  })
+
+  seckillTabItem.on('click', function () {
+    var j = $(this).index()
+    seckillTabItem.removeClass('active').eq(j).addClass('active')
+    seckillSlide.slideTo(j, 500, false)
+  })
+
+  function seckImgHeiht() {
+    var seckillImgHeight = $('.seckill-img').height()
+    var seckillTime = $('.seckill-time-wrapper')
+    seckillTime.css('height', seckillImgHeight)
+  }
+  seckImgHeiht()
+  $(window).on('resize', function () {
+    seckImgHeiht()
+  })
+
+  $('#seckill-order-form').formValidation({
+    fields: {
+      username: {
+        validators: {
+          notEmpty: {
+            message: '姓名不能为空'
+          }
+        }
+      },
+      phone: {
+        validators: {
+          notEmpty: {
+            message: '手机号不能为空'
+          },
+          regexp: {
+            regexp: /^1[3|4|5|8][0-9]\d{8}$/,
+            message: '手机号格式不正确'
+          }
+        }
+      }
+    }
+  })
+
+  function zeroTime(i) {
+    if (i < 10) {
+      i = '0' + i
+    }
+    return i
+  }
+  var submitBtn = $('.submit-btn')
+
+  function getServerDate() {
+    return new Date($.ajax({async: false}).getResponseHeader('Date'))
+  }
+  //ajax()
+  /*function ajax(option){
+   var xhr = null;
+   if(window.XMLHttpRequest){
+   xhr = new window.XMLHttpRequest();
+   }else{ // ie
+   xhr = new ActiveObject("Microsoft")
+   }
+   // 通过get的方式请求当前文件
+   xhr.open("get","/");
+   xhr.send(null);
+   // 监听请求状态变化
+   xhr.onreadystatechange = function(){
+   var time = null,
+   curDate = null;
+   if(xhr.readyState===2){
+   // 获取请求头里的时间戳
+   time = xhr.getResponseHeader("Date");
+   console.log(xhr.getAllResponseHeaders())
+   curDate = new Date(time);
+   GetRTime(curDate)
+   //document.getElementById("time").innerHTML = "服务器时间是："+curDate.getFullYear()+"-"+(curDate.getMonth()+1)+"-"+curDate.getDate()+" "+curDate.getHours()+":"+curDate.getMinutes()+":"+curDate.getSeconds();
+   }
+   }
+   }*/
+  var count = 0
+  var NowTime = new Date(getServerDate())
+  var seckillText = $('.seckill-time p')
+
+  function GetRTime(ntime) {
+    count ++
+    var StartTime = new Date(2017,10,9,23,59,59)
+    var EndTime = new Date(2017,10,11,23,59,59)
+    //var NowTime = new Date()
+    var nowTotalTime = NowTime.getTime() + count * 1000
+    var t = StartTime.getTime() - nowTotalTime
+    var d = '00'
+    var h = '00'
+    var m = '00'
+    var s = '00'
+
+    if (nowTotalTime < StartTime.getTime()) {
+      h = zeroTime(Math.floor(t / 1000 / 60 / 60 ))
+      m = zeroTime(Math.floor(t / 1000 / 60 % 60))
+      s = zeroTime(Math.floor(t / 1000 % 60))
+      console.log('现在时间：' + nowTotalTime)
+      console.log('开始时间：' +StartTime.getTime())
+      console.log('结束时间：' +EndTime.getTime())
+    } else if (nowTotalTime >= StartTime.getTime() && nowTotalTime <= EndTime.getTime()) {
+      submitBtn.removeAttr('disabled')
+      submitBtn.addClass('active')
+      t = EndTime.getTime() - nowTotalTime
+      h = zeroTime(Math.floor(t / 1000 / 60 / 60 ))
+      m = zeroTime(Math.floor(t / 1000 / 60 % 60))
+      s = zeroTime(Math.floor(t / 1000 % 60))
+
+      seckillText.text('距离结束时间还剩')
+    } else {
+      clearInterval(timer)
+      seckillText.text('活动结束')
+      submitBtn.attr('disabled', 'disabled')
+      submitBtn.removeClass('active')
+    }
+
+      /*if ((StartTime.getTime() <= NowTime.getTime() <= EndTime.getTime()) && t>=0 ) {
+       d = zeroTime(Math.floor(t / 1000 / 60 / 60 / 24))
+       h = zeroTime(Math.floor(t / 1000 / 60 / 60 % 24))
+       m = zeroTime(Math.floor(t / 1000 / 60 % 60))
+       s = zeroTime(Math.floor(t / 1000 % 60))
+       } else {
+       submitBtn.removeAttr('disabled')
+       submitBtn.addClass('active')
+       clearInterval(timer)
+       }*/
+
+    document.getElementById('t_h').innerHTML = h
+    document.getElementById('t_m').innerHTML = m
+    document.getElementById('t_s').innerHTML = s
+  }
+  //GetRTime()
+  var timer = setInterval(GetRTime, 1000)
+
+  submitBtn.attr('disabled', 'disabled')
+  submitBtn.removeClass('active')
+
+  $.ajax({
+    url: '/index.php?m=purui&c=ajaxdata&a=ajaxSale&host=7&count=1',
+    type: 'get',
+    dataType: 'jsonp',
+    jsonp: 'callback',
+    jsonpCallback: 'success_jsonpCallback',
+    success: function (data) {
+      if (data == 1) {
+        // 无商品
+        submitBtn.attr('disabled', 'disabled')
+        submitBtn.html('商品已抢完')
+        submitBtn.addClass('active')
+      }
+    }
+  })
+
+  submitBtn.on('click', function () {
+    var name = $('#username').val().trim()
+    var phone = $('#phone').val().trim()
+    var phoneReg = /^1[3|4|5|8][0-9]\d{8}$/
+    if (!name || !phone) {
+      alert('姓名或手机号不能为空')
+      return false
+    }
+    if(!phoneReg.test(phone)){
+      return false
+    }
+
+    var submit_url = window.location.href
+    $.ajax({
+      url: '/index.php?m=purui&c=ajaxdata&a=ajaxSale&host=7&name=' + name + '&phone=' + phone +
+      '&submit_url=' + submit_url,
+      type: 'get',
+      dataType: 'jsonp',
+      jsonp: 'callback',
+      jsonpCallback: 'success_jsonpCallback',
+      success: function (data) {
+        if (data == 1) {
+          popup(3)
+        } else if (data == 2) {
+          popup(2)
+        } else if (data == 3) {
+          popup(0)
+        } else if (data == 4) {
+          popup(1)
+        }
+      }
+    })
+  })
+
+  function popup(i) {
+    var popup = $('.popup')
+    var popupClose = $('.popup-close')
+    var popupItem = $('.popup .popup-item')
+    popup.css('display', 'block')
+    popupItem.css('display', 'none').eq(i).css('display', 'block')
+    popupClose.on('click', function () {
+      popup.css('display', 'none')
+    })
+  }
+
+  // 0 sucess 1 failed 2 已经秒杀 3 抢完
+</script>
+</body>
+</html>
