@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  max-width: 640px;
+  margin: 0 auto; }
+
+.banner img {
+  display: block;
+  width: 100%; }
+
+.banner .swiper-pagination {
+  width: 45px;
+  height: 45px;
+  background: #c8c8c8;
+  opacity: 0.7;
+  left: auto;
+  right: 10px;
+  border-radius: 50%;
+  line-height: 45px;
+  font-size: 16px;
+  bottom: 65px; }
+
+.seckill-info {
+  overflow: hidden;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center; }
+  .seckill-info .seckill-detail {
+    background: url("../images/miaosha/bg.jpg") no-repeat center;
+    background-size: 100% 100%;
+    width: 60%;
+    padding: 3px 10px; }
+    .seckill-info .seckill-detail .seckill-price {
+      font-size: 15px;
+      font-weight: bold; }
+      .seckill-info .seckill-detail .seckill-price strong {
+        font-size: 30px; }
+    .seckill-info .seckill-detail .seckill-pre-price {
+      overflow: hidden; }
+      .seckill-info .seckill-detail .seckill-pre-price .naoling {
+        float: left;
+        border: 1px solid #fff; }
+        .seckill-info .seckill-detail .seckill-pre-price .naoling .naoling-bg {
+          float: left;
+          padding: 2px 5px;
+          background: #fff; }
+          .seckill-info .seckill-detail .seckill-pre-price .naoling .naoling-bg .icon {
+            color: #ff9000;
+            font-size: 23px; }
+        .seckill-info .seckill-detail .seckill-pre-price .naoling .naoling-text {
+          float: left;
+          color: #fff;
+          font-size: 10px;
+          padding-top: 6px;
+          padding-left: 5px; }
+      .seckill-info .seckill-detail .seckill-pre-price s {
+        font-size: 13px;
+        color: #ffffff;
+        padding-left: 5px;
+        padding-top: 6px;
+        float: left; }
+    .seckill-info .seckill-detail p {
+      font-size: 10px;
+      color: #fff; }
+  .seckill-info .seckill-img {
+    width: 60%; }
+    .seckill-info .seckill-img img {
+      display: block;
+      width: 100%; }
+  .seckill-info .seckill-time-wrapper {
+    background: #ffebd4;
+    width: 40%;
+    height: 100%;
+    text-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center; }
+  .seckill-info .seckill-time p {
+    text-align: center;
+    font-size: 12px;
+    color: #ff6000;
+    padding-top: 1%;
+    margin-bottom: 0; }
+  .seckill-info .seckill-time .seckill-lefttime {
+    display: flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    padding-top: 5px;
+    color: #ff6000; }
+    .seckill-info .seckill-time .seckill-lefttime div {
+      font-size: 15px;
+      padding: 2px;
+      background: #ff6000;
+      color: #fff;
+      border-radius: 2%; }
+  .seckill-info .seckill-time button {
+    font-size: 10px;
+    border: none;
+    background: #eaeaea;
+    padding: 3px 5px;
+    margin-top: 2%; }
+
+.seckill-order {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-around;
+  -webkit-justify-content: space-around;
+  padding: 7px 0; }
+  .seckill-order .input-text {
+    margin-bottom: 0; }
+    .seckill-order .input-text input[name="username"] {
+      width: 70px; }
+    .seckill-order .input-text input[name="phone"] {
+      width: 90px; }
+    .seckill-order .input-text label {
+      font-size: 12px; }
+  .seckill-order button {
+    border: none;
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 5px;
+    height: 25px; }
+    .seckill-order button.active {
+      background: #ff6000; }
+
+.seckill-tab {
+  padding: 8px;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-around;
+  -webkit-justify-content: space-around;
+  align-items: center;
+  -webkit-align-items: center;
+  background: #e8e8e8; }
+  .seckill-tab .seckill-tab-item {
+    font-size: 12px;
+    width: 100%;
+    text-align: center; }
+    .seckill-tab .seckill-tab-item.active {
+      color: #ff6000; }
+  .seckill-tab .divide {
+    color: #c7c7c7; }
+
+.seckill-tab-slide .swiper-slide img {
+  display: block;
+  width: 100%; }
+.seckill-tab-slide .swiper-slide .tips {
+  font-size: 12px;
+  padding: 10px; }
+  .seckill-tab-slide .swiper-slide .tips .text-color {
+    color: #ff6000; }
+.seckill-tab-slide .swiper-slide .ewm {
+  width: 120px;
+  margin: 0 auto; }
+  .seckill-tab-slide .swiper-slide .ewm img {
+    display: block;
+    width: 100%; }
+
+.seckill-rule {
+  padding: 10px;
+  font-size: 14px; }
+  .seckill-rule .seckill-rule-title {
+    font-size: 16px;
+    margin-bottom: 23px;
+    color: #ff6000;
+    font-weight: bold;
+    margin-top: 18px; }
+  .seckill-rule p {
+    margin-bottom: 8px; }
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  display: none; }
+  .popup img {
+    display: block;
+    margin: 0 auto;
+    width: 100%; }
+  .popup .failed, .popup .success {
+    margin-top: 100px;
+    position: relative;
+    width: 290px;
+    margin-left: auto;
+    margin-right: auto;
+    display: none; }
+  .popup .popup-close {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    top: 0; }
+
+/*# sourceMappingURL=miaosha.css.map */
