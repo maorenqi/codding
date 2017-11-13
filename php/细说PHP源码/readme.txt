@@ -85,3 +85,10 @@ explode.php		演示字符串处理函数explode()的使用
 implode.php		演示字符串处理函数implode()的使用
 
 article目录		文章发布过程演示
+
+error.php	错误类型演示
+error_log.php	写入错误日志
+exception.php	异常的应用
+MyException.class.php 自定义异常
+mulexception.php	多个异常处理
+
