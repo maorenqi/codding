@@ -126,6 +126,15 @@ iptables -Z
 		content varchar(100)
 	)default charset = utf8;
 	
+	#修改表
+	ALTER TABLE 表名 ADD 字段名 <建表语句>【FIRST|AFTER 列名】
+	ALTER TABLE users ADD email VARCHAR(30) NOT NULL;
+	ALTER TABLE users ADD name VARCHAR(30) NOT NULL FIRST;
+
+	// CHANGE除了更改类型外还能更改列名，而MODIFY不能实现这个功能
+	ALTER TABLE users MODIFY telNo INT UNSIGNED DEFAULT '0';
+	ALTER TABLE users CHANGE telN0 telNo INT UNSIGNED DEFAULT '0';
+
 	#删除表
 	drop table student;
 	
