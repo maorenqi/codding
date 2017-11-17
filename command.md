@@ -81,6 +81,11 @@ iptables -X
 iptables -Z
 ````
 
+## 判断设备跳转到移动端JS：
+	if ((navigator.userAgent.toLowerCase().match(/(iphone|ipod|ipad|android|ios|symbianos|windows phone|windows ce|ucweb|midp)/i))) {
+		window.location.href= "http://m.neweye.cn";
+	}
+
 ##	软件的添加和删除 
 > ln -s /pkg/web/www.p028.com/theme /pkg/web/w.p028.com/theme
 
@@ -177,7 +182,7 @@ iptables -Z
 	select sum(id) from student;
 	
 	#查询第i条以后到第j条的数据
-	select * from sutdent limit 2,5;  #显示3-5条数据
+	select * from sutdent limit 2,5;  #显示第3条以后5条数据
 	
 	#复合性的查询
 	select * from table_name1 where exists(select * from table_name2 where conditions)
