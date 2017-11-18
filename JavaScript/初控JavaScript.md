@@ -13,3 +13,16 @@
 	 	return ("Hello" + name);	
 	};
 	document.writeln(myFunc("Adam"));
+
+## 使用变量和类型
+	
+
+##	创建对象
+	var myData = new Object();
+	myData.name = "Adma";
+	myData.weather = "sunny";
+### 使用对象字面量（一口气定义一个对象及其属性）
+	var myData = {
+		name:"Garfield",
+		weather:"sunny"
+	};
