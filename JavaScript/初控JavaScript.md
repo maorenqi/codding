@@ -26,3 +26,71 @@
 		name:"Garfield",
 		weather:"sunny"
 	};
+### 将函数用做方法
+	var myData = {
+		name:"Garfield",
+		weather:"sunny"，
+		printMessages:function(){
+			document.writeln("Hello" + name);
+			document.writeln("It is " + weather + "today");
+		}
+	};
+
+	myData.printMessages();
+
+### 使用对象（读取和修改属性）
+	var myData = {
+		name:"Garfield",
+		weather:"sunny"
+	};
+	myData.name = "Joe";
+	myData["weather"] = "raining";
+### 枚举对象属性
+	var myData = {
+		name:"Garfield",
+		weather:"sunny"，
+		printMessages:function(){
+			document.writeln("Hello" + name);
+			document.writeln("It is " + weather + "today");
+		}
+	};
+	for(var prop in myData){
+		document.writeln("Name:" + prop + " Value: " + myData[prop]);
+	};
+
+	printout:
+	Name: name Value: Garfield
+	Name: weather Value: sunny
+	Name: printMessages Value: function(){
+			document.writeln("Hello" + name);
+			document.writeln("It is " + weather + "today");
+		}
+### 为对象添加新属性
+	var myData = {
+		name:"Garfield",
+		weather:"sunny"
+	};
+	myData.dayOfWeek = "Monday";
+
+### 为对象添加新方法
+	var myData = {
+		name:"Garfield",
+		weather:"sunny"
+	};
+	myData.sayHello = function(){
+		document.writeln("Hello");	
+	}
+### 删除对象属性
+	var myData = {
+		name:"Garfield",
+		weather:"sunny"
+	};
+	delete myData.name;
+	delete myData["weather"];
+### 判断对象是否具有某个属性
+	var myData = {
+		name:"Garfield",
+		weather:"sunny"
+	};
+	var hasName = "name" in myData;
+	var hasDate = "date" in myDate;
