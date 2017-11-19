@@ -94,3 +94,30 @@
 	};
 	var hasName = "name" in myData;
 	var hasDate = "date" in myDate;
+## JavaScript运算符（相等和等同运算符）
+	//使用相等运算符
+	<script type="text/javascript">
+		var firstVal = 5;
+		var secondVal = "5";
+		if(firstVal == secondVal){
+			document.writeln("They are the same");
+		}else{
+		
+			document.writeln("They are NOT the same");
+		}
+	</script>
+	输出：They are the same
+
+	//使用等同运算符
+	<script type="text/javascript">
+		var firstVal = 5;
+		var secondVal = "5";
+		if(firstVal === secondVal){
+			document.writeln("They are the same");
+		}else{
+		
+			document.writeln("They are NOT the same");
+		}
+	</script>
+	输出：They are NOT the same
+### JavaScript基本类型的比较是值的比较，而JavaScript对象的比较则是引用的比较。
