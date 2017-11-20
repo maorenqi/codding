@@ -191,4 +191,8 @@
 ### 比较undefined 和 null值
 读取未赋值的变量或试图读取对象没有的属性时得到的就是**undefined**值。**null**表示已经赋了一个值但该值无值。
 ### 检查变量或属性是否为undefined 或null
-if (!myData.name)
+if (!myData.name){
+
+}else{
+
+}
