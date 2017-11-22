@@ -1,6 +1,6 @@
 
 # ThinkPHP
-
+基于ThinkPHP手册的一些摘要，手册链接：http://document.thinkphp.cn/manual_3_2.html
 
 ## 模型
 
@@ -66,10 +66,53 @@
 读取字段值其实就是获取数据表中的某个列的多个或者单个数据，最常用的方法是 getField方法。
 
 
+### 更新数据
+更新数据使用save方法。
+
+#### 更新字段
+如果只是更新个别字段的值，可以使用setField方法。
+	$User-> where('id=5')->setField('name','ThinkPHP');
+	$data = array('name'=>'ThinkPHP','email'=>'ThinkPHP@gmail.com');
+	$User-> where('id=5')->setField($data);
+
+而对于统计字段（通常指的是数字类型）的更新，系统还提供了setInc和setDec方法。
+	$User->where('id=5')->setInc('score',3); // 用户的积分加3
+	$User->where('id=5')->setInc('score'); // 用户的积分加1
+	$User->where('id=5')->setDec('score',5); // 用户的积分减5
+	$User->where('id=5')->setDec('score'); // 用户的积分减1
 
 
+### 数据删除
+ThinkPHP删除数据使用delete方法。
 
+	$Form->delete(5);
+	$User->where('id=5')->delete(); // 删除id为5的用户数据
+	$User->delete('1,2,5'); // 删除主键为1,2和5的用户数据
+	$User->where('status=0')->delete(); // 删除所有状态为0的用户数据
+	$User->where('1')->delete(); //删除表中所有记录
+	
+### 动态查询
+getBy动态查询
 
+	$User->getByName('Tom');
+	$User->getByEmail('a@b.com');
+
+getFieldBy
+	
+	$User->getFieldByName('Tom','id')
+表示根据用户的name获取用户的id值。
+
+### 字段验证
+验证规则
+1.静态方式：在模型类里面通过$_validate属性定义验证规则。
+2.动态方式：使用模型类的 validate方法动态创建自动验证规则。
+格式：
+
+	array(
+		array(验证字段1，验证规则，提示错误，[验证条件，附加规则，验证时间])，
+		array(验证字段2，验证规则，错误提示，[验证条件，附加规则，验证时间])，
+		......
+	)
 
 
 
