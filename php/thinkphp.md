@@ -105,7 +105,21 @@ getFieldBy
 ### 字段验证
 验证规则
 1.静态方式：在模型类里面通过$_validate属性定义验证规则。
+
+	protected $_validate = array(
+		array(),
+		array()	
+	);
 2.动态方式：使用模型类的 validate方法动态创建自动验证规则。
+
+	$rule = array(
+		array(),
+		array()	
+	);
+	if(!$User->validate($rule)->create()){
+
+	}
+
 格式：
 
 	array(
@@ -113,9 +127,38 @@ getFieldBy
 		array(验证字段2，验证规则，错误提示，[验证条件，附加规则，验证时间])，
 		......
 	)
+#### 验证字段
+表单字段、数据库字段都行，验证字段可以随意设置。
+#### 验证规则
+附加规则。系统内置了一些常用正则验证规则，可直接做为验证规则使用。
+require 字段必须、 email 邮箱、 url URL地址、 currency 货币、 number 数字。
+#### 提示信息
+验证失败后的提示信息
+#### 验证条件
+self::EXISTS_VALIDATE 或者0 存在字段的验证（默认）
+self::MUST_VALIDATE 或者1 必须验证
+self::VALUE_VALIDATE 或者2 值不为空时候的验证
+#### 附加规则
+	regex 		正则验证
+	function 	函数验证
+	callback	方法验证，定义的规则
+	confirm		验证表单中的两个字段是否相同
+	equal		验证是否等于某个值
+	notequal	验证是否不等于某个值
+	in			验证是否在某个范围内
+	notin		验证是否不在某个范围内
+	length		验证长度
+	between		验证范围
+	notbetween	验证不在某个范围
+	expire		验证是否在有效期
+	ip_allow	验证IP是否允许
+	ip_deny		验证IP是否禁止
+	unique		验证是否唯一
 
-
-
+#### 验证时间
+self::MODEL_INSERT	或者1 新增数据时验证
+self::MODEL_UPDATE	或者2 编辑数据时验证
+self::MODEL_BOTH	或者3 全部情况下验证
 
 
 
