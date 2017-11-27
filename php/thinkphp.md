@@ -266,19 +266,23 @@ fetch('模板文件')
 
 
 
+#### 标签库
+	<taglib name="html" />
+	<taglib name="html,article" />
+	
+	<article:read name="hello" id="data" >
+	{$data.id}:{$data.title}
+	</article:read>
+	
+	<article:read>... </article:read> 就是闭合标签
+	<article:read name="hello" /> 就是开放标签。
 
+#### 内置标签
+内置标签库无需导入即可使用，并且不需要加XML中的标签库前缀，ThinkPHP内置的标签库是Cx标签库，所以，Cx标签库中的所有标签，我们可以在模板文件中直接使用，我们可以这样使用：
 
-
-
-
-
-
-
-
-
-
-
-
+	<eq name="status" value="1 >
+	正常
+	</eq>
 
 
 
