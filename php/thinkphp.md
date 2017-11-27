@@ -241,7 +241,49 @@ fetch('模板文件')
 	{$Think.cookie.name}   //输出$_COOKIE['name']变量
 	{$Think.MODULE_NAME} //常量输出
 	{$Think.config.url_model} //配置输出
-	{$Think.lang}
+	{$Think.lang.page_error}
+	{$Think.lang.var_error}
+
+
+#### 使用函数
+	{$data.name|md5}
+	等价于<?php echo (md5($data['name'])); ?>
+	{$name|md5|strtoupper|substr=0,3}
+	<?php echo (substr(strtoupper(md5($name)),0,3)); ?>
+	{:substr(strtoupper(md5($name)),0,3)}
+
+#### 默认输出
+	{$user.nickname|default="这家伙很懒，什么也没留下"}
+
+#### 使用运算符
+在使用运算符的时候，不再支持点语法和常规的函数用法。
+
+	{$user.score+10} //错误的
+	{$user['score']+10} //正确的
+	{$user['score']*$user['level']} //正确的
+	{$user['score']|myFun*10} //错误的
+	{$user['score']+myFun($user['level'])} //正确的
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### thinkphp如何查看方法自动sql生成的sql语句
 	echo M()->getLastSql();	
