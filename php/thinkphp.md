@@ -220,13 +220,30 @@ T([资源://][模块@][主题/][控制器/]操作,[视图分层])
 #### 获取内容
 fetch('模板文件')
 
+### 模板
+#### 变量输出
+	{$name} 
+ 
+	{$data.name}  
+	{$data.email}  
 
+	{$data['name']}  
+	{$data['email']} 
+ 
+	{$data:name}  
+	{$data:email}  
 
+	{$data->name}  
+	{$data->email}
 
-
-
+#### 系统变更
+	{$Think.get.pageNumber}  //输出$_GET['pageNumber']变量
+	{$Think.cookie.name}   //输出$_COOKIE['name']变量
+	{$Think.MODULE_NAME} //常量输出
+	{$Think.config.url_model} //配置输出
+	{$Think.lang}
 
 ### thinkphp如何查看方法自动sql生成的sql语句
-	echo M()->getLastSql();
-	echo $User->getLastSql();  
+	echo M()->getLastSql();	
+	echo $User->getLastSql(); 
 	echo $User->_sql();  //输出上次执行的sql语句
