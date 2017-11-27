@@ -172,12 +172,59 @@ self::MODEL_BOTH	或者3 全部情况下验证
 		...
 	);
 
-protected $_auto = array(
-	array('status','1'), //新增时把status字段设置为1
-	array('password','md5',3,'function'),//对password字段在新增和编辑的时候使md5函数处理
-	array('name','getName',3,'callback'),//对name字段在新增和编辑的时候回调getName方法
-	array('update_time','time',2,'function'),//对pudate_time字段在更新的时候写入当前时间戳
-);
+	protected $_auto = array(
+		array('status','1'), //新增时把status字段设置为1
+		array('password','md5',3,'function'),//对password字段在新增和编辑的时候使md5函数处理
+		array('name','getName',3,'callback'),//对name字段在新增和编辑的时候回调getName方法
+		array('update_time','time',2,'function'),//对pudate_time字段在更新的时候写入当前时间戳
+	);
+
+
+### 视图
+#### 模板主题
+	// 在控制器中动态改变模板主题
+	$this->theme('blue')->display('add');
+
+#### 模板赋值
+	$this->assign('name',$value);
+	// 下面的写法是等效的
+	$this->name = $value;
+赋值后，就可以这样输出： {$name}
+
+#### 模板渲染
+渲染模板输出最常用的是使用display方法，调用格式：  
+display('模板文件'[, '字符编码'][,'输出类型'])
+
+	// 不带任何参数 自动定位当前操作的模板文件
+	$this->display();
+
+	表示调用当前模块下面的edit模板
+	// 指定模板输出
+	$this->display('edit'); 
+
+	表示调用Member模块下面的read模板。
+	$this->display('Member:read');
+	
+	表示调用blue主题下面的User控制器的edit模板。
+	$this->theme('blue')->display('User:edit'); 
+
+#### 获取模板地址
+T([资源://][模块@][主题/][控制器/]操作,[视图分层])
+
+	T('Public/menu')
+	//返回 themes/simplebootx/Public/menu.html
+
+	T（'User@Public/menu'）
+	//返回 themes/User/Public/menu.html
+
+#### 获取内容
+fetch('模板文件')
+
+
+
+
+
+
 
 ### thinkphp如何查看方法自动sql生成的sql语句
 	echo M()->getLastSql();
