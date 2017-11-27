@@ -55,8 +55,7 @@
 	$User->addAll($dataList);
 
 ### 数据读取
-某些情况下有些连贯操作是无效的，例如limit方法对find方法是无效的。
-
+某些情况下有些连贯操作是无效的，例如limit方法对find方法是无效的。  
 读取数据是指读取数据表中的**一行数据**（或者关联数据），主要通过find方法完成。
 
 #### 读取数据集
@@ -163,11 +162,22 @@ self::MODEL_BOTH	或者3 全部情况下验证
 
 ### 自动完成 
 #### 规则定义
-静态方式： 在模型类里面通过$_auto属性定义处理规则。
-
+静态方式： 在模型类里面通过$_auto属性定义处理规则。  
 动态方式： 使用模型类的auto方法动态创建自动处理规则。
+定义规则都采用: 
 
+	array(
+		array(完成字段1， 完成规则，[完成条件，附加规则]),
+		array(完成字段2， 完成规则，[完成条件，附加规则])，
+		...
+	);
 
+protected $_auto = array(
+	array('status','1'), //新增时把status字段设置为1
+	array('password','md5',3,'function'),//对password字段在新增和编辑的时候使md5函数处理
+	array('name','getName',3,'callback'),//对name字段在新增和编辑的时候回调getName方法
+	array('update_time','time',2,'function'),//对pudate_time字段在更新的时候写入当前时间戳
+);
 
 ### thinkphp如何查看方法自动sql生成的sql语句
 	echo M()->getLastSql();
