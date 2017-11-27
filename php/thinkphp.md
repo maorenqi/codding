@@ -161,6 +161,7 @@ self::MODEL_UPDATE	或者2 编辑数据时验证
 self::MODEL_BOTH	或者3 全部情况下验证
 
 
+### 自动完成 
 
 
 
