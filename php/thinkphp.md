@@ -249,6 +249,97 @@ fetch('模板文件')
 	<block name="title"><title>标题</title></block>
 	
 	<extend name="base" />
+#### 三元运算
+	{$status?'正常'：'错误'}
+
+#### 内置标签
+##### Volist标签
+	<volist name="list" id="vo">
+		{$vo.id}:{$vo.name}<br />
+	</volist>
+
+	//输出其中的第5~15条记录
+	<volist name="list" id="vo" offset="5" length='10'>
+		{$vo.name}
+	</volist>
+
+	//为空的时候输出提示
+	<volist name="list" id="vo" empty="暂时没有数据" >
+		{$vo.id}|{$vo.name}
+	</volist>
+
+	//支持变理输出
+	$this->assign('empty',"<span class='empty'>暂无数据</span>");
+	$this->assign('list',$list);
+	<volist name="list" id="vo" empty="$empty">
+		{$vo.id}|{$vo.name}
+	</volist>
+
+如果没有指定key属性的话，默认使用循环变量i
+
+##### Foreach 标签
+<foreach name="list" item="vo">
+	{$key}|{$vo}
+</foreach>
+
+<foreach name="list" item="vo" key="k">
+	{$k}|{$vo}
+</foreach>
+
+##### For标签
+开始值、结束值、步进值和循环变量都可以支持变量，开始值和结束值是必须，其他是可选。comparison 的默认值是lt;；name的默认值是i，步进值的默认值是1
+	<for start="开始值" end="结束值" comparison="" step="步进值" name="循环变量名">
+	</for>
+	
+	<for start="1" end="100">
+		{$i}
+	</for>
+	
+	//解析后的代码是
+	for ($i=1; $i<100; $i+=1){
+		echo $i;
+	}
+##### Switch标签
+	<switch name="Think.get.userId">
+		<case value="1">admin</case>
+		<case value='2'>demo</case>
+		<default /> default
+	</switch>
+
+##### 比较标签
+	<比较标签 name="变量" value="值">
+		eq neq gt egt lt elt heq nheq
+	</比较标签>
+	
+	<eq name="name" value="value">value</eq>
+	
+	<eq name="name" value="value">
+	相等
+	<else />
+	不相等
+	</eq>
+	
+	
+	<compare name="name" value="5" type="eq">value</compare>
+##### 范围判断标签IN OR NOTIN
+	<in name="id" value="1,2,3">
+	id在范围内
+	<else />
+	id不在范围内
+	</in>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### thinkphp如何查看方法自动sql生成的sql语句
 	echo M()->getLastSql();	
