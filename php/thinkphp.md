@@ -321,12 +321,66 @@ fetch('模板文件')
 	
 	
 	<compare name="name" value="5" type="eq">value</compare>
+
 ##### 范围判断标签IN OR NOTIN
 	<in name="id" value="1,2,3">
 	id在范围内
 	<else />
 	id不在范围内
 	</in>
+
+	<between name="id" value="1,10">
+	输出内容
+	</between>
+	
+	<range name="id" value="1,5" type="in">
+	</range>
+
+
+##### If标签
+	<if condition="($name eq 1) OR（$name gt 100">value1
+	<elseif conditon="($name eq 2)" />value2
+	<else /> value3
+	</if>
+
+##### Present标签
+	<present name="name">
+	name已经赋值
+	</present>
+	
+	<notpresent name="name">
+	</notpresent>
+
+
+##### empty标签
+	<empty name="name">
+	name为空
+	</empty>
+	
+	<notempty name="name">
+	</notempty>
+##### Defined标签
+	<defined name="NAME">
+	NAME常量已经定义
+	</defined>
+	<notdefined name="NAME">
+	NAME常量未定义
+	</notdefined>
+
+##### Assign标签
+	<assign name="var" value="123" />
+	<assign name="Think.get.id" value="12" />
+	<assign name="var" value="$val" />
+
+
+##### Define标签
+<define name="MY_D" value="3" />
+
+##### 标签嵌套
+系统内置的标签中，volist、switch、if、elseif、else、foreach、compare（包括所有的比较标签）、（not）present、（not）empty、（not）defined等标签都可以嵌套使用。
+##### 使用PHP标签
+	<php>echo 'Hello';</php>
+
 
 
 
