@@ -1,6 +1,6 @@
 
 # ThinkPHP
-基于ThinkPHP手册的一些摘要，手册链接：http://document.thinkphp.cn/manual_3_2.html
+[基于ThinkPHP手册的一些摘要，手册链接：](http://document.thinkphp.cn/manual_3_2.html)
 
 ## 模型
 
@@ -242,6 +242,13 @@ fetch('模板文件')
 	{$Think.MODULE_NAME} //常量输出
 	{$Think.config.url_model} //配置输出
 	{$Think.lang}
+
+
+### 模板继承
+	<block></block>
+	<block name="title"><title>标题</title></block>
+	
+	<extend name="base" />
 
 ### thinkphp如何查看方法自动sql生成的sql语句
 	echo M()->getLastSql();	
