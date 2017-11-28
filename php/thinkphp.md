@@ -381,7 +381,11 @@ fetch('模板文件')
 ##### 使用PHP标签
 	<php>echo 'Hello';</php>
 
-
+#### 原样输出
+	<literal>
+		<if>
+		</if>
+	</literal>
 
 
 
