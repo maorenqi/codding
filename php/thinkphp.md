@@ -389,17 +389,36 @@ fetch('模板文件')
 
 
 
+### 缓存
+#### 缓存初始化
+	S(array(
+		'type'=>'Xcache',
+		'host'=>'localhost',
+		'port'=>'11211',
+		'prefix'=>'think',
+		'expire'=>60
+	));
+
+	// 设置缓存
+	S('name',$value);
+	
+	// 缓存数据300秒
+	S('name',$value,300);
+	
+	// 采用文件方式缓存数据300秒
+	S('name',$value,array('type'=>'file','expire'=>300));
+
+
+	// 读取缓存
+	$value = S('name');
+	
+	// 删除缓存
+	S('name',null);
 
 
 
 
-
-
-
-
-
-
-### thinkphp如何查看方法自动sql生成的sql语句
+### 模型调试 thinkphp如何查看方法自动sql生成的sql语句
 	echo M()->getLastSql();	
 	echo $User->getLastSql(); 
 	echo $User->_sql();  //输出上次执行的sql语句
