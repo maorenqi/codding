@@ -241,7 +241,53 @@ fetch('模板文件')
 	{$Think.cookie.name}   //输出$_COOKIE['name']变量
 	{$Think.MODULE_NAME} //常量输出
 	{$Think.config.url_model} //配置输出
-	{$Think.lang}
+	{$Think.lang.page_error}
+	{$Think.lang.var_error}
+
+
+#### 使用函数
+	{$data.name|md5}
+	等价于<?php echo (md5($data['name'])); ?>
+	{$name|md5|strtoupper|substr=0,3}
+	<?php echo (substr(strtoupper(md5($name)),0,3)); ?>
+	{:substr(strtoupper(md5($name)),0,3)}
+
+#### 默认输出
+	{$user.nickname|default="这家伙很懒，什么也没留下"}
+
+#### 使用运算符
+在使用运算符的时候，不再支持点语法和常规的函数用法。
+
+	{$user.score+10} //错误的
+	{$user['score']+10} //正确的
+	{$user['score']*$user['level']} //正确的
+	{$user['score']|myFun*10} //错误的
+	{$user['score']+myFun($user['level'])} //正确的
+
+
+
+#### 标签库
+	<taglib name="html" />
+	<taglib name="html,article" />
+	
+	<article:read name="hello" id="data" >
+	{$data.id}:{$data.title}
+	</article:read>
+	
+	<article:read>... </article:read> 就是闭合标签
+	<article:read name="hello" /> 就是开放标签。
+
+#### 内置标签
+内置标签库无需导入即可使用，并且不需要加XML中的标签库前缀，ThinkPHP内置的标签库是Cx标签库，所以，Cx标签库中的所有标签，我们可以在模板文件中直接使用，我们可以这样使用：
+
+	<eq name="status" value="1 >
+	正常
+	</eq>
+
+
+
+
+
 
 
 ### 模板继承
