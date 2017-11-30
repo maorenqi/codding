@@ -2,6 +2,36 @@
 # ThinkPHP
 [基于ThinkPHP手册的一些摘要，手册链接：](http://document.thinkphp.cn/manual_3_2.html)
 
+## 配置
+### 读取配置
+获取已经设置的参数值：C('参数名称')
+
+	$model = C('URL_MODEL');
+	C('my_config',null,'default_config');
+	C('USER_CONFIG.USER_TYPE');
+
+### 动态配置
+设置新的值：  
+C('参数名称','新的参数值');
+
+	// 动态改变缓存有效期
+	C('DATA_CACHE_TIME',60);
+	
+	// 获取已经设置的参数值
+	C('USER_CONFIG.USER_TYPE');
+	//设置新的值
+	C('USER_CONFIG.USER_TYPE',1);
+
+### 批量配置
+
+	$config = array('WEB_SITE_TITLE'=>'ThinkPHP','WEB_SITE_DESCRIPTION'=>'开源PHP框架');
+	C($config);
+
+
+## 架构
+### 模块化设计
+http://serverName/index.php（或者其他应用入口文件）/模块/控制器/操作/[参数名/参数值...]
+
 ## 模型
 
 ### CURD操作 数据创建
