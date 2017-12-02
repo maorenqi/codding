@@ -1,5 +1,39 @@
 # JavaScript
 
+##语言核心
+###词法结构
+
+区分大小写
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## 定义和使用函数
 	function myFunc(name,weather){
 		document.writeln("This is a statement");
