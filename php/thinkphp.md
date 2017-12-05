@@ -498,3 +498,92 @@ fetch('模板文件')
 	echo M()->getLastSql();	
 	echo $User->getLastSql(); 
 	echo $User->_sql();  //输出上次执行的sql语句
+
+
+### ThinkPHP 几个常用函数
+
+	/**
+	 * 获取和设置配置参数 支持批量定义
+	 * @param string|array $name 配置变量
+	 * @param mixed $value 配置值
+	 * @param mixed $default 默认值
+	 * @return mixed
+	 */
+	C($name=null, $value=null,$default=null)
+
+	/**
+	 * 抛出异常处理
+	 * @param string $msg 异常消息
+	 * @param integer $code 异常代码 默认为0
+	 * @throws Think\Exception
+	 * @return void
+	 */
+	E($msg, $code=0)
+	
+	/**
+	 * 记录和统计时间（微秒）和内存使用情况
+	 * 使用方法:
+	 * <code>
+	 * G('begin'); // 记录开始标记位
+	 * // ... 区间运行代码
+	 * G('end'); // 记录结束标签位
+	 * echo G('begin','end',6); // 统计区间运行时间 精确到小数后6位
+	 * echo G('begin','end','m'); // 统计区间内存使用情况
+	 * 如果end标记位没有定义，则会自动以当前作为标记位
+	 * 其中统计内存使用需要 MEMORY_LIMIT_ON 常量为true才有效
+	 * </code>
+	 * @param string $start 开始标签
+	 * @param string $end 结束标签
+	 * @param integer|string $dec 小数位或者m
+	 * @return mixed
+	 */
+	G($start,$end='',$dec=4) 
+	
+	/**
+	 * 获取和设置语言定义(不区分大小写)
+	 * @param string|array $name 语言变量
+	 * @param mixed $value 语言值或者变量
+	 * @return mixed
+	 */
+	L($name=null, $value=null)
+	
+	/**
+	 * ThinkCMF NOTE
+	 * 获取模版文件 格式 资源://主题@模块/控制器/操作
+	 * @param string $template 模版资源地址
+	 * @param string $layer 视图层（目录）名称
+	 * @return string
+	 */
+	T($template='',$layer='')
+
+	/**
+	 * 获取输入参数 支持过滤和默认值
+	 * 使用方法:
+	 * <code>
+	 * I('id',0); 获取id参数 自动判断get或者post
+	 * I('post.name','','htmlspecialchars'); 获取$_POST['name']
+	 * I('get.'); 获取$_GET
+	 * </code>
+	 * @param string $name 变量的名称 支持指定类型
+	 * @param mixed $default 不存在的时候默认值
+	 * @param mixed $filter 参数过滤方法
+	 * @param mixed $datas 要获取的额外数据源
+	 * @return mixed
+	 */
+	I($name,$default='',$filter=null,$datas=null)
+
+	/**
+	 * 设置和获取统计数据
+	 * 使用方法:
+	 * <code>
+	 * N('db',1); // 记录数据库操作次数
+	 * N('read',1); // 记录读取次数
+	 * echo N('db'); // 获取当前页面数据库的所有操作次数
+	 * echo N('read'); // 获取当前页面读取次数
+	 * </code>
+	 * @param string $key 标识位置
+	 * @param integer $step 步进值
+	 * @param boolean $save 是否保存结果
+	 * @return mixed
+	 */
+	N($key, $step=0,$save=false)
