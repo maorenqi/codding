@@ -501,7 +501,6 @@ fetch('模板文件')
 
 
 ### ThinkPHP 几个常用函数
-
 	/**
 	 * 获取和设置配置参数 支持批量定义
 	 * @param string|array $name 配置变量
@@ -587,3 +586,83 @@ fetch('模板文件')
 	 * @return mixed
 	 */
 	N($key, $step=0,$save=false)
+
+	/**
+	 * 实例化模型类 格式 [资源://][模块/]模型
+	 * @param string $name 资源地址
+	 * @param string $layer 模型层名称
+	 * @return Think\Model
+	 */
+	D($name='',$layer='') 
+	
+	/**
+	 * 实例化一个没有模型文件的Model
+	 * @param string $name Model名称 支持指定基础模型 例如 MongoModel:User
+	 * @param string $tablePrefix 表前缀
+	 * @param mixed $connection 数据库连接信息
+	 * @return Think\Model
+	 */
+	M($name='', $tablePrefix='',$connection='') 
+
+	/**
+	 * 实例化多层控制器 格式：[资源://][模块/]控制器
+	 * @param string $name 资源地址
+	 * @param string $layer 控制层名称
+	 * @param integer $level 控制器层次
+	 * @return Think\Controller|false
+	 */
+	A($name,$layer='',$level=0) 
+	
+	/**
+	 * 远程调用控制器的操作方法 URL 参数格式 [资源://][模块/]控制器/操作
+	 * @param string $url 调用地址
+	 * @param string|array $vars 调用参数 支持字符串和数组
+	 * @param string $layer 要调用的控制层名称
+	 * @return mixed
+	 */
+	R($url,$vars=array(),$layer='')
+	
+	/**
+	 * 执行某个行为
+	 * @param string $name 行为名称
+	 * @param string $tag 标签名称（行为类无需传入） 
+	 * @param Mixed $params 传入的参数
+	 * @return void
+	 */
+	B($name, $tag='',&$params=NULL)
+	
+	/**
+	 * URL组装 支持不同URL模式
+	 * @param string $url URL表达式，格式：'[模块/控制器/操作#锚点@域名]?参数1=值1&参数2=值2...'
+	 * @param string|array $vars 传入的参数，支持数组和字符串
+	 * @param string|boolean $suffix 伪静态后缀，默认为true表示获取配置值
+	 * @param boolean $domain 是否显示域名
+	 * @return string
+	 */
+	U($url='',$vars='',$suffix=true,$domain=false)
+	
+	/**
+	 * 渲染输出Widget
+	 * @param string $name Widget名称
+	 * @param array $data 传入的参数
+	 * @return void
+	 */
+	W($name, $data=array())
+	
+	/**
+	 * 缓存管理
+	 * @param mixed $name 缓存名称，如果为数组表示进行缓存设置
+	 * @param mixed $value 缓存值
+	 * @param mixed $options 缓存参数
+	 * @return mixed
+	 */
+	S($name,$value='',$options=null)
+	
+	/**
+	 * 快速文件数据读取和保存 针对简单类型数据 字符串、数组
+	 * @param string $name 缓存名称
+	 * @param mixed $value 缓存值
+	 * @param string $path 缓存路径
+	 * @return mixed
+	 */
+	F($name, $value='', $path=DATA_PATH)
