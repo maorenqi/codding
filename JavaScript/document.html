@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Document</title>
+
+		<script type='text/javascript' src='http://www.p028.com/statics/p028/lib/jquery/1.9.1/jquery.min.js'></script>
+		<script type='text/javascript' src='test.js'> </script>
+	</head>
+	<body>
+		<p id="cookiedata">
+		
+		</p>
+		<button id="write">Add cookie</button>
+		<button id="update">Update cookie</button>
+		<script>
+			document.writeln('<pre>');
+			document.writeln("characterSet:" + document.characterSet);
+			document.writeln("charSet:" + document.charset);
+			document.writeln("compatMode:" + document.compatMode);
+			document.writeln("cookie:" + document.cookie);
+			document.writeln("defaultCharset:" + document.defaultCharset);
+			document.writeln("dir:" + document.dir);
+			document.writeln("domain:" + document.domain);
+			document.writeln("implementation:" + document.implementation);
+			document.writeln("lastModified:" + document.lastModified);
+			document.writeln("location:" + document.location.host);
+			document.writeln("location:" + document.location.pathname);
+			document.writeln('</pre>');
+			
+			//cookie
+			var cookieCount = 0;
+			document.getElementById("update").onclick = updateCookie;
+			document.getElementById("write").onclick = writeCookie;
+			function readCookies(){
+				document.getElementById("cookiedata").innerHTML = document.cookie;
+			}
+			
+			function writeCookie(){
+				cookieCount++;
+				document.cookie = "Cookie_"+ cookieCount + "=Value_" + cookieCount;
+				readCookies();
+			}
+			
+			function updateCookie(){
+				document.cookie = "Cookie_" + cookieCount  + "=Update_" + cookieCount;
+				readCookies();
+			}
+		</script>
+		
+		
+	</body>
+</html>
