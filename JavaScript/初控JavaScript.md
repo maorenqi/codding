@@ -251,3 +251,16 @@ async属性解决的是不需要脚本同步顺序执行，以提高基性能。
         e.target.style.removeProperty('background');
     }
 > 使用addEventListener方法，它由HTMLElement对象实现。
+
+#### Event对象的函数和属性
+- type	事件的名称（如mouseover）	字符串
+- target	事件指向的元素	HTMLElement
+- currentTarget	带有当前被触发事件监听器的元素	HTMLElement
+- eventPhase	事件生命周期阶段	数值
+- bubbles	如果事件会在文档里冒泡则返回true，否则返回false 	布尔型
+- cancelable	如果事件带有可撤消的默认行为则返回true，否则返回false 布尔型
+- timeStamp		事件创建时间，如果时间不可用则为0 	字符串
+- stopPropagation()	在当前元素的事件监听器被触发后终止事件在元素树中流动	void
+- stopImmediatePropagation()	立即终止事件在元素树中的流动。当前元素上未被触发的事件监听器会被忽略 	void
+- preventDefault()	防止浏览器执行与事件关联的默认操作	void
+- defaultPrevented	如果调用preventDefault()则返回true	布尔型
