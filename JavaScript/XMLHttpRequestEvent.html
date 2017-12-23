@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>  
+<html>  
+	<meta charset="utf-8" />  
+	<head>    
+		<title>使用XMLHttpRequest定义的一次事件</title>    
+
+	</head>
+	<body>
+		<div>
+			<button>Apples</button>
+			<button>Cherries</button>
+			<button>Bananas</button>
+		</div>
+		<table id="events" border="1">
+				
+		</table>
+		<div id="target">
+			Press a button
+		</div>
+		
+		<script>
+			var buttons = document.getElementByTagName("button");
+			for(var i=0; i<buttons.length; i++){
+				buttons[i].onclick = handleButtonPress;
+			}
+			var httpRequest;
+			function handleButtonPress(e){//事件函数加参数e
+				clearEventDetails();
+				httpRequest = new XMLHttpRequest();
+				httpRequest.onreadystatechange = handleResponse;
+				httpRequest.onerror = handleError;
+				httpRequest.onload = handleLoad;
+				httpRequest.onloadend = handleLoadEnd;
+				httpRequest.onloadstart = handleLoadStart;
+				httpRequest.onprogress = handleProgress;
+				httpRequest.open("GET", e.target.innerHTML + ".html");
+				httpRequest.send();			
+			}
+			
+			function handleResponse(e){
+				
+			}
+			function handleError(e){displayEventDetails("", e);}
+			function handleError(e){displayEventDetails("", e);}
+			function handleError(e){displayEventDetails("", e);}
+			function handleError(e){displayEventDetails("", e);}
+			function handleError(e){displayEventDetails("", e);}
+			function handleError(e){displayEventDetails("", e);}
+			function clearEventDetails(){
+			
+			}
+			
+			function displayEventDetails(eventName,e){
+			
+			}
+		</script>
+	</body>    
+</html>   
