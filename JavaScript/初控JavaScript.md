@@ -17,8 +17,6 @@
 	};
 	document.writeln(myFunc("Adam"));
 
-## 使用变量和类型
-	
 
 ##	创建对象
 	var myData = new Object();
@@ -264,6 +262,3 @@ async属性解决的是不需要脚本同步顺序执行，以提高基性能。
 - stopImmediatePropagation()	立即终止事件在元素树中的流动。当前元素上未被触发的事件监听器会被忽略 	void
 - preventDefault()	防止浏览器执行与事件关联的默认操作	void
 - defaultPrevented	如果调用preventDefault()则返回true	布尔型
-
-
-[X] dfd
