@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://abc.prykweb.com/js/public/jquery-1.10.2.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #url {
+            width: 200px;
+            height: 30px;
+        }
+
+        .content {
+            padding: 50px;
+        }
+
+        .search {
+            text-align: center;
+        }
+
+        #search {
+            width: 80px;
+            height: 30px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #mp3-list {
+            text-align: left;
+        }
+
+        #mp3-list li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <div class="search">
+        <input type="text" id="url" value="">
+        <button id="search">查找</button>
+    </div>
+    <div id="mp3-list"></div>
+    <div id="download-all">全部下载</div>
+</div>
+
+
+<script>
+  var searchBtn = document.getElementById('search')
+  var url = document.getElementById('url')
+  var downloadAll = document.getElementById('download-all')
+  var mp3List = document.getElementById('mp3-list')
+  searchBtn.addEventListener('click', function () {
+    //获取ids
+    $.ajax({
+      url: '/music',
+      type: 'POST',
+      data: {
+        musicUrl: url.value
+      },
+      success: function (data) {
+        getData(data)
+      }
+    })
+  })
+  var index = 0
+  var mp3Arr = []
+  function getData(data) {
+	$.ajax({
+		url: 'http://vdn.apps.cntv.cn/api/getIpadVideoInfo.do?pid=' + data[index],
+		type: 'GET',
+		dataType: 'jsonp',
+		async: false,
+		jsonpCallback: 'getHtml5VideoData',
+		success: function (data2) {
+			var result = JSON.parse(data2)
+			var mp3Url = result.video.chapters[0].url
+			mp3Arr.push(result)
+			index++
+			if (index >= data.length) {
+			  //console.log(mp3Arr)
+			  insertMp3(mp3Arr)
+			  return
+			}
+			getData(data)
+		}
+	})
+  }
+
+	function insertMp3(mp3Arr) {
+		var li_list = ''
+
+		mp3Arr.forEach(function (value, index, arr) {
+			li_list += '<li class="item"><a download="aa" href="' + value.video.chapters[0].url + '" >' + value.title +
+		'</a></li>'
+		})
+		var ul = document.createElement('ul')
+		ul.innerHTML = li_list
+		mp3List.appendChild(ul)
+	}
+	downloadAll.addEventListener('click', function () {
+		var list = mp3List.querySelectorAll('.item a')
+		if(list){
+			for (var i = 0; i < list.length; i++) {
+				//console.log('click')
+				list[i].click()
+			}		
+		}
+	}, false)
+
+</script>
+</body>
+</html>
