@@ -1,0 +1,33 @@
+<view class="card-container" style="background: url({{cardBg}}) no-repeat center;background-size: 100% 100%">
+    <view class="audio-content" style="background: url('{{cardTemplateBg}}') no-repeat center;background-size: 100% 100%">
+        <view class="userinfo">
+            <image class="userinfo-avatar" src="{{userInfo.avatar}}" background-size="cover"></image>
+            <view class='userinfo-nickname-wp'>
+                <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+            </view>
+        </view>
+        <view class="share-audio">
+            <text class="text">捎给你你一句祝福，点击播放</text>
+            <view style="background: url('{{audioBg}}') no-repeat center;background-size: 100% 100%"
+                  bindtap="playVoice" class="audio-wp">
+                <image style="width: 60rpx;height: 60rpx;vertical-align: middle" src="../../resource/images/icon-12.png"></image>
+                {{duration}}"
+            </view>
+        </view>
+    </view>
+
+    <view class="share" bindtap="goIndex">
+        <text>{{shareText}}</text>
+    </view>
+    <!--<view class="audio-edit">
+        <view class="audioCard-edit" bindtap="restart">
+            <text>重新制作</text>
+        </view>
+       &lt;!&ndash; <view class="audioCard-edit" open-type="share">
+            <button class="btn">分享</button>
+        </view>&ndash;&gt;
+        <view class="audioCard-edit">
+            <text>浏览</text>
+        </view>
+    </view>-->
+</view>

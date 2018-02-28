@@ -1,0 +1,8 @@
+/* pages/userCenter/userCenter.wxss */
+.card-container{
+    position: absolute;width: 100%;height: 100%;background: #CE211A;
+}
+.user-center .user-item{
+    padding: 20rpx;font-size: 16px;border-bottom: 1px solid #fff;display: flex;justify-content: space-between;
+    color: #fff;
+}

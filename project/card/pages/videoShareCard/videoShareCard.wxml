@@ -1,0 +1,11 @@
+<view class="card-container" style="background: url({{cardBg}}) no-repeat center;background-size: 100% 100%">
+    <view class="audio-content" style="background: url('{{cardTemplateBg}}') no-repeat center;background-size: 100% 100%">
+        <view class="video-preview">
+            <video binderror="videoErrorCallback"
+                   controls id="video" bindtap="playVideo" src="{{videoSrc}}"></video>
+        </view>
+    </view>
+    <view class="share" bindtap="goIndex">
+        <text>{{shareText}}</text>
+    </view>
+</view>

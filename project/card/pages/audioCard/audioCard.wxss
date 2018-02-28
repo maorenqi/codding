@@ -1,0 +1,27 @@
+@import "../index/index.wxss";
+
+
+.recommend-text{
+    padding: 60rpx;height: 610rpx;position: relative;
+}
+.recommend-text .recommend-title{
+    text-align: center;font-size: 18px;color: #f06666;
+}
+.recommend-text .recommend-content{
+    font-size: 16px;text-indent: 2em;line-height: 40px;
+}
+.recommend-text .change{
+    color: #f06666;font-size: 12px;position: absolute;bottom: 70rpx;right: 70rpx;
+}
+.startAudio .audio-time{
+    font-size: 18px;color: #f06666;text-align: center;margin-top: 30rpx;margin-bottom: 30rpx;
+}
+.startAudio .text{
+    text-align: center;font-size: 16px;color: #f06666;
+}
+.startAudio .edit-audio{
+    display: flex;justify-content: space-around;
+}
+.startAudio .edit-item{
+    font-size: 14px;color: #f06666;text-align: center;
+}

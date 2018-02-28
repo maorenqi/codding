@@ -1,0 +1,29 @@
+<template name="selectCard">
+    <view class="card-wp">
+
+        <view  class="card-sel">
+            <scroll-view class="scroll-h" scroll-x>
+                <view class="scroll-item" style="width: 60rpx;">
+                    <image  src="../../resource/images/bg5.png"></image>
+                </view>
+                <view class="scroll-item user-defined" bindtap="chooseImg">
+                    <image src="../../resource/images/swiper-1.jpg"></image>
+                </view>
+                <view data-idx="{{index}}" class="scroll-item {{index==selectIndex? 'active' : ''}}"
+                      wx:for="{{cardUrls}}"
+                      bindtap="cardSelect">
+                    <image src="{{item}}"/>
+                    <view class="suc-icon" wx:if="{{index==selectIndex}}">
+                        <block>
+                            <icon type="success_no_circle" color="rgb(255,255,255)" size="20"></icon>
+                        </block>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+
+        <view class="edit-btn" bindtap="edit">
+            <button>下一步</button>
+        </view>
+    </view>
+</template>

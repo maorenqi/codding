@@ -1,0 +1,25 @@
+/* pages/userData/userData.wxss */
+.card-container{
+    position: absolute;width: 100%;height: 100%;padding: 20rpx 0 20rpx 20rpx;box-sizing: border-box;overflow-x: hidden;
+    background: #CE211A;
+}
+.card-title{
+    font-size: 18px;color: #fff;
+}
+.card-list{
+    font-size: 16px;
+}
+.card-list .list-wp{
+    width: 100%;
+}
+
+.card-list .list-wp .item{
+    position: relative;padding: 16rpx 0rpx 16rpx 10rpx;border-bottom: 1px solid #fff;color: #fff;
+}
+.card-list .list-wp .item .create-time{
+
+}
+.card-list .list-wp .item .del-btn{
+    /*transform: translateX(106rpx);*/position: absolute;right: -106rpx;top: 0rpx;padding: 16rpx 16rpx;background: #fff;color: red;
+    border-radius: 10rpx;
+}

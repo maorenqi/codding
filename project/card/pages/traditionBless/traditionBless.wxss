@@ -1,0 +1,10 @@
+/* pages/traditionBless.wxss */
+@import "../tradition/tradition.wxss";
+@import "../traditionCard/traditionCard.wxss";
+@import "../index/index.wxss";
+.card-wp .bless-content textarea{
+    width: 100%;
+}
+.card-wp .other-bless{
+    color: #fff;text-align: right;padding: 20rpx 0;
+}

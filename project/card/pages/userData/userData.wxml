@@ -1,0 +1,15 @@
+<view class="card-container">
+    <view class="card-title">{{cardtype}}列表：</view>
+    <view class="card-list">
+        <view class="list-wp">
+            <view data-idx="{{index}}" animation="{{selectIndex == index ? animationData : ''}}"
+                  bindtouchstart="startDel" bindtouchmove="showDelBtn" bindtouchend="endDel"
+                   class="item"
+                  wx:for="{{cardList}}">
+                <view data-duration="{{item.duration}}"
+                      data-cardtype="{{item.type}}" data-cardid="{{item.id}}" bindtap="goShareCard" class="create-time">{{index + 1}}.创建时间：{{item.createtime}}</view>
+                <view data-cardtype="{{item.type}}" data-cardid="{{item.id}}" class="del-btn" bindtap="delData">删除</view>
+            </view>
+        </view>
+    </view>
+</view>

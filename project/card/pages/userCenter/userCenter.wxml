@@ -1,0 +1,16 @@
+<view class="card-container">
+    <view class="user-center">
+        <navigator class="user-item" url="/pages/userData/userData?cardtype=传统贺卡">
+            <text>传统贺卡</text>
+            <text>></text>
+        </navigator>
+        <navigator class="user-item" url="/pages/userData/userData?cardtype=语音贺卡">
+            <text>语音贺卡</text>
+            <text>></text>
+        </navigator>
+        <navigator class="user-item" url="/pages/userData/userData?cardtype=视频贺卡">
+            <text>视频贺卡</text>
+            <text>></text>
+        </navigator>
+    </view>
+</view>

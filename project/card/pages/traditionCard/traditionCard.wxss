@@ -1,0 +1,54 @@
+@import "../index/index.wxss";
+@import "../tradition/tradition.wxss";
+
+.scroll-h{
+    white-space: nowrap;
+}
+.scroll-item{
+    display:inline-block;position: relative; width: 160rpx; margin: 0 15rpx;
+}
+.card-container{
+    position: absolute;height: 100%;width: 100%;box-sizing: border-box;
+}
+.scroll-item image{
+    display: block;width: 100%;height: 190rpx;
+}
+.card-wp{
+    box-sizing: border-box;padding: 20rpx;background: rgba(0, 0, 0, 0.6);
+    position: absolute;width: 100%;bottom: 0;
+}
+.card-sel{
+    margin-bottom: 15rpx;
+}
+.edit-btn button{
+    background: #e54340;color: #fff;margin: 0 50rpx;font-size: 16px;
+}
+.scroll-item.active image{
+    border: 8rpx solid #fff;box-sizing: border-box;
+}
+.suc-icon{
+    position: absolute;z-index: 10;top: 50%;left: 50%;margin-left: -10px;margin-top: -10px;
+}
+.edit-content input{
+    border: 2rpx solid #ccc;background: #fff;height: 80rpx;border-radius: 2px;margin-bottom: 25rpx;
+}
+.edit-content textarea{
+    min-height: 160rpx;border: 2rpx solid #ccc;background: #fff;border-radius: 2px;
+}
+.bless-pos{
+    margin: 0 auto; padding: 0 60rpx;
+}
+.bless-pos .bless-block{
+    text-align: justify;color: #000;line-height: 25px;
+}
+.bless-pos .bless-pos-title{
+    margin-bottom: 35rpx; text-align: center;color: #dc4439;font-size: 18px;
+}
+
+
+.card-content .card-title{
+    text-align: center;color: #dc4439;margin-bottom: 20rpx;font-size: 18px;
+}
+.card-content .card-text{
+   padding: 0 60rpx;line-height: 28px;
+}

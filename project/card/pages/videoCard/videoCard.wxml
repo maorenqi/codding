@@ -1,0 +1,31 @@
+<import src="../common/music.wxml"/>
+
+<view class="card-container" style="background: url({{cardBg}}) no-repeat center;background-size: 100% 100%">
+    <view class="audio-content" style="background: url('{{cardTemplateBg}}') no-repeat center;background-size: 100% 100%">
+        <view class="video-preview">
+            <video src="{{videoSrc}}"></video>
+        </view>
+        <view wx:if="{{!editFlag}}" bindtap="addVideo" class="add-btn">
+            <view>
+                <image style="width: 120rpx;height: 120rpx;" src="../../resource/images/icon-11.png"></image>
+            </view>
+            <text>添加视频</text>
+        </view>
+    </view>
+
+    <view wx:if="{{editFlag}}" class="video-edit {{editFlag == true ? 'fadeIn': ''}}">
+        <view bindtap="restartVideo" class="edit-item">
+            <view>
+                <image style="width: 100rpx;height: 100rpx;" src="../../resource/images/icon-10.png"></image>
+            </view>
+            <text>重新选择</text>
+        </view>
+        <view bindtap="finishVideo" class="edit-item">
+            <view>
+                <image style="width: 100rpx;height: 100rpx;" src="../../resource/images/icon-7.png"></image>
+            </view>
+            <text>完成</text>
+        </view>
+    </view>
+    <template is="music" data="{{isPlay: isPlay}}"></template>
+</view>

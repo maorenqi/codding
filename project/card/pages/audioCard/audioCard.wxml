@@ -1,0 +1,38 @@
+<import src="../common/music.wxml"/>
+
+<view class="card-container">
+    <view class="recommend-text"
+          style="background: url('{{audioTextBg}}') no-repeat center;background-size: 100% 100%">
+        <view class="recommend-title">推荐祝福语</view>
+        <view class="recommend-content">{{recommendTextList[num].content}}</view>
+        <view class="change" bindtap="changeRcmd">换一换</view>
+    </view>
+
+    <view class="startAudio">
+        <view class="audio-time">{{formatedRecordTime}}</view>
+        <view wx:if="{{recording==false && hasRecord==false}}" class="text" bindtap="startRecord">
+            <view class="startAudio-icon"><image style="width: 180rpx;height: 180rpx;" src="../../resource/images/icon-5.png"></image></view>
+            开始录音
+        </view>
+        <view wx:if="{{recording==true && hasRecord==true}}" class="text" bindtap="stopRecord">
+            <view class="startAudio-icon"><image style="width: 180rpx;height: 180rpx;" src="../../resource/images/icon-5.png"></image></view>
+            停止录音
+        </view>
+        <view class="edit-audio" wx:if="{{recording==false && hasRecord==true}}"><!--wx:if="{{recording==false && hasRecord==true}}"-->
+            <view class="edit-item" bindtap="restartRecord">
+                <view class="startAudio-icon"><image style="width: 90rpx;height: 90rpx;" src="../../resource/images/icon-6.png"></image></view>
+                <view>重新录音</view>
+            </view>
+            <view class="edit-item" bindtap="finishRecord">
+                <view class="startAudio-icon"><image style="width: 90rpx;height: 90rpx;" src="../../resource/images/icon-7.png"></image></view>
+                <view>完成</view>
+            </view>
+            <view class="edit-item" bindtap="playVoice">
+                <view class="startAudio-icon"><image style="width: 90rpx;height: 90rpx;" src="../../resource/images/icon-8.png"></image></view>
+                <view>试听</view>
+            </view>
+        </view>
+
+    </view>
+    <template is="music" data="{{isPlay: isPlay}}"></template>
+</view>

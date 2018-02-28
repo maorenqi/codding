@@ -1,0 +1,17 @@
+@import "../traditionCard/traditionCard.wxss";
+@import "../index/index.wxss";
+.video-edit{
+    display: flex;justify-content: space-between;font-size: 16px;background: rgba(0,0,0,0.6);padding: 20rpx;
+}
+.audio-content{
+    width: 538rpx;height: 983rpx;margin: 0 auto;box-sizing: border-box;padding-top: 220rpx;margin-top: 40rpx;
+}
+.video-preview{
+    width:420rpx;
+    height:520rpx;
+    margin:0 auto;
+    margin-top:100rpx;
+}
+.video-preview video{
+    display: block;width: 100%;height: 100%;
+}

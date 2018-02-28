@@ -1,0 +1,26 @@
+<!--pages/audioTemplate/audioTemplate.wxml-->
+<import src="../common/music.wxml"/>
+
+<view class="card-container"
+      style="width: 100%;height: 100%;background-image: url('{{cardBg}}');background-size: 100% 100%;background-repeat: no-repeat;">
+    <view class="audio-content"
+          style="background: url('{{cardTemplateBg}}') no-repeat center;background-size: 100% 100%">
+        <view class="userinfo-avatar-wp">
+            <image src="{{avatarUrl}}" background-size="cover"></image>
+        </view>
+        <view bindtap="playVoice" class="audio-duration" style="background: url('{{audioBg}}') no-repeat center;background-size: 100% 100%">
+<!--
+            <image style="width: 60rpx;height: 60rpx;vertical-align: middle;margin-right: 10rpx;" src="../../resource/images/icon-12.png"></image>
+-->
+            <canvas style="width: 30px;height: 30px;display: inline-block;vertical-align: middle;" canvas-id="voice" class="voice"></canvas>
+            <text class="audio-duration-text">{{duration}}"</text>
+        </view>
+    </view>
+    <view data-cardClass="{{}}" class='create-card' bindtap='createCard'>
+        <view>
+            <image style="width: 60rpx;height: 60rpx;" src="../../resource/images/icon-4.png"></image>
+        </view>
+        <text class='text'>制作贺卡</text>
+    </view>
+    <template is="music" data="{{isPlay: isPlay}}"></template>
+</view>

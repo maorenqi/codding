@@ -1,0 +1,18 @@
+<import src="../common/select-card.wxml"/>
+<import src="../common/music.wxml"/>
+
+<view class="card-container"
+      style="width: 100%;height: 100%;background-image: url('{{cardBg}}');background-size: 100% 100%;background-repeat: no-repeat;">
+    <view class="audio-content"
+          style="background: url('{{cardTemplateBg}}') no-repeat center;background-size: 100% 100%">
+        <view class="userinfo-avatar-wp">
+            <image src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+        </view>
+        <view class="audio-duration" style="background: url('{{audioBg}}') no-repeat center;background-size: 100% 100%">
+            <image style="width: 60rpx;height: 60rpx;vertical-align: middle;margin-right: 10rpx;" src="../../resource/images/icon-12.png"></image>
+            <text>0"</text>
+        </view>
+    </view>
+    <template is="selectCard" data="{{...audioData}}"></template>
+    <template is="music" data="{{isPlay: isPlay}}"></template>
+</view>

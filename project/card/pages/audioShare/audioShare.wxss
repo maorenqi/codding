@@ -1,0 +1,32 @@
+@import "../audio/audio.wxss";
+.card-container{
+    position: absolute;width: 100%;height: 100%;
+}
+
+.audio-content .userinfo{
+    margin-top: 100rpx;
+}
+.userinfo .userinfo-nickname-wp{
+    text-align: center;
+}
+.userinfo .userinfo-avatar{
+    width: 128rpx;height: 128rpx;display: block;margin: 0 auto;border-radius: 50%;
+}
+.share-audio{
+    text-align: center;margin-top: 30rpx;color: #000;
+}
+.share-audio text{
+    padding: 0 40rpx;font-size: 14px;
+}
+.share-audio .audio-wp{
+    padding: 12rpx 0;width: 380rpx;margin: 50rpx auto 0 auto;color: #3d3d3d;
+}
+.audio-edit{
+    display: flex;justify-content: space-around;
+}
+.audio-edit .audioCard-edit{
+    margin: 0 30rpx;font-size: 16px;margin-top: 20rpx;
+}
+.audio-edit .audioCard-edit .btn{
+    border: none;background: none;margin: 0;padding: 0;position:inherit;  line-height:24px;
+}

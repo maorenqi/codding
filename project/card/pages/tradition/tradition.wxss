@@ -1,0 +1,53 @@
+@import "../index/index.wxss";
+
+.swiper-wrapper{
+  width: 100%;height: 100%;position: absolute;
+}
+.swiper-wrapper .swiper1{
+  position: absolute;width: 100%;height: 100%;
+}
+.swiper-wrapper .swiper1 image{
+  height: 100%; width: 100%;
+}
+.card-container{
+  position: absolute;width: 100%;height: 100%;
+}
+.card-content{
+  width:580rpx;
+  height:983rpx;
+  margin:0 auto;
+  margin-top: 40rpx;
+  box-sizing:border-box;
+  padding-top:220rpx;
+}
+.card-content .card-title{
+  text-align: center;color: #dc4439;margin-bottom: 20rpx;font-size: 18px;
+}
+.card-content .card-text{
+  padding: 0 60rpx;line-height: 28px;
+}
+
+.create-card{
+  position: absolute;bottom: 13rpx;right: 20rpx;width: 150rpx;height: 150rpx;
+  border-radius: 50%;background: #e64240;text-align: center;padding-top: 10rpx;box-sizing: border-box;
+}
+.create-card .text{
+  color: #fff;font-size: 12px;
+}
+/*
+
+
+.card-sel{
+  position: absolute;z-index: 999;bottom: 0;width: 100%;transform: translateY(100%);transition: all 0.5s ease;
+}
+.card-sel.show{
+  transform: translateY(0);
+}
+.card-opt{
+  width: 250rpx;margin: 0 20rpx;
+}
+.card-opt image{
+  display: block;width: 100%;
+}*/
+
+

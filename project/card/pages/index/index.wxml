@@ -1,0 +1,50 @@
+<!--index.wxml-->
+<import src="../common/music.wxml"/>
+
+<view class="container"
+      style="background-image: url('{{cardBg}}');background-size: 100% 100%;background-repeat: no-repeat;">
+    <!--<canvas style="width: 160px; height: 160px;" canvas-id="dog" class="dog"></canvas>-->
+    <view class="userinfo">
+        <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 登录</button>
+        <block wx:else>
+            <view class='avataPos' bindtap="bindViewTap">
+                <image  class="userinfo-avatar" src="{{userInfo.avatarUrl}}"
+                       background-size="cover"></image>
+                <view class='userinfo-nickname-wp'>
+                     <text class="userinfo-nickname">我的贺卡</text>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view class='greeting-card'>
+        <view data-to='tradition' bindtap='navigatorTo' class='card tradition-card' open-type='navigate'>
+            <view>
+                <image style="width: 80rpx;height: 80rpx;" src="../../resource/images/icon-1.png"></image>
+            </view>
+            <text>传统贺卡</text>
+        </view>
+        <view data-to='audioTemplate' bindtap='navigatorTo' class='card audio-card'>
+            <view>
+                <image style="width: 80rpx;height: 80rpx;" src="../../resource/images/icon-2.png"></image>
+            </view>
+            <text>语音贺卡</text>
+        </view>
+
+        <!--<view data-to='interest' class='card interest-card'>
+            <text>趣味贺卡</text>
+        </view>-->
+    </view>
+    <view class="greeting-card">
+        <view data-to='videoTemplate' bindtap='navigatorTo' class='card video-card'>
+            <view>
+                <image style="width: 80rpx;height: 80rpx;" src="../../resource/images/icon-3.png"></image>
+            </view>
+            <text>视频贺卡</text>
+        </view>
+    </view>
+    <template is="music" data="{{isPlay: isPlay}}"></template>
+
+<!--
+    <modal hidden="{{loginConfirm}}" bindconfirm="confirm" bindcancel="cancel" class="login-confirm">需要允许获取用户信心，确定将继续设置，取消将退出游戏</modal>
+-->
+</view>

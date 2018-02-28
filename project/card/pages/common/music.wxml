@@ -1,0 +1,6 @@
+<template name="music">
+    <view bindtap="play" class="music-icon {{isPlay == true ? 'play' : ''}}">
+        <image src="../../resource/images/music.png"></image>
+    </view>
+</template>
+

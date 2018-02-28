@@ -1,0 +1,19 @@
+<!--pages/videoTemplate/videoTemplate.wxml-->
+<import src="../common/music.wxml"/>
+
+<view class="card-container"
+      style="width: 100%;height: 100%;background-image: url('{{cardBg}}');background-size: 100% 100%;background-repeat: no-repeat;">
+    <view class="audio-content" style="background: url('{{cardTemplateBg}}') no-repeat center;background-size: 100% 100%">
+        <view class="video-preview">
+            <video src="{{videoSrc}}"></video>
+        </view>
+    </view>
+
+    <view data-cardClass="{{}}" class='create-card' bindtap='createCard'>
+        <view>
+            <image style="width: 60rpx;height: 60rpx;" src="../../resource/images/icon-4.png"></image>
+        </view>
+        <text class='text'>制作贺卡</text>
+    </view>
+    <template is="music" data="{{isPlay: isPlay}}"></template>
+</view>

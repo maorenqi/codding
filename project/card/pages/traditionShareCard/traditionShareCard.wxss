@@ -1,0 +1,4 @@
+/* pages/traditionShareCard/traditionShareCard.wxss */
+@import "../traditionCard/traditionCard.wxss";
+@import "../tradition/tradition.wxss";
+@import "../index/index.wxss";

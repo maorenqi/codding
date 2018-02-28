@@ -1,0 +1,9 @@
+/* pages/audioTemplate/audioTemplate.wxss */
+@import "../audio/audio.wxss";
+@import "../tradition/tradition.wxss";
+@import "../index/index.wxss";
+.audio-content .audio-duration{
+    width: 300rpx;padding: 10rpx;margin: 0 auto;background-size: 100% 100%;
+    text-align: center;
+}
+

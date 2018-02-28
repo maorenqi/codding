@@ -1,0 +1,27 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/tradition/tradition",
+    "pages/traditionCard/traditionCard",
+    "pages/traditionBless/traditionBless",
+    "pages/audio/audio",
+    "pages/audioCard/audioCard",
+    "pages/audioShare/audioShare",
+    "pages/video/video",
+    "pages/videoCard/videoCard",
+    "pages/otherBless/otherBless",
+    "pages/traditionShareCard/traditionShareCard",
+    "pages/videoShareCard/videoShareCard",
+    "pages/userCenter/userCenter",
+    "pages/userData/userData",
+    "pages/audioTemplate/audioTemplate",
+    "pages/videoTemplate/videoTemplate"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#dc4439",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "#fff"
+  }
+}
